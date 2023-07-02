@@ -8,6 +8,7 @@ Repo che contiene varie librerie
 |----------|------------|
 | Core     | [Link](https://github.com/PoliNetworkOrg/Lib_CSharp/blob/main/PoliNetwork.Core/README.md) |
 | Telegram | [Link](https://github.com/PoliNetworkOrg/Lib_CSharp/blob/main/PoliNetwork.Telegram/README.md) |
+| Db       | [Link](https://github.com/PoliNetworkOrg/Lib_CSharp/blob/main/PoliNetwork.Db/README.md) |
 
 
 ## Dipendenze
