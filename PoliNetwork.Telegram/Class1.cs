@@ -1,4 +1,4 @@
-﻿namespace PoliNetwork.Core;
+﻿namespace PoliNetwork.Telegram;
 
 /***
  * Test class
