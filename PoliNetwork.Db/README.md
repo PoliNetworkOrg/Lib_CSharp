@@ -4,4 +4,4 @@
 
 ## Used by
 
-* https://github.com/PoliNetworkOrg/PoliNetworkBot_CSharp
+* https://github.com/PoliNetworkOrg/PoliFemoBackend
