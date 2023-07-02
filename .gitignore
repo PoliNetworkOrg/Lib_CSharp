@@ -4,3 +4,9 @@ PoliNetwork.Core/.idea/
 PoliNetwork.Core/PoliNetwork.Core/bin/
 
 PoliNetwork.Core/PoliNetwork.Core/obj/
+
+.idea/
+
+PoliNetwork.Core/bin/
+
+PoliNetwork.Core/obj/
