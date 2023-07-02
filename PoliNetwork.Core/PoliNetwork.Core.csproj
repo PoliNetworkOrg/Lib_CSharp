@@ -15,6 +15,7 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageTags>polinetwork, library, core</PackageTags>
         <PackageLicenseUrl>https://opensource.org/license/mit/</PackageLicenseUrl>
+        <RepositoryType>library</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
