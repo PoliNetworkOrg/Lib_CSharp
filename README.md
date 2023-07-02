@@ -8,3 +8,5 @@ Repo che contiene varie librerie
 | Telegram | [Link](https://github.com/PoliNetworkOrg/Lib_CSharp/blob/main/PoliNetwork.Telegram/README.md) |
 
 
+Dipendenze
+
