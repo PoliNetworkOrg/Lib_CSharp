@@ -1,8 +1,5 @@
 #region
 
-using System.Data;
-using Microsoft.VisualBasic;
-using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 
 #endregion
@@ -31,8 +28,6 @@ public class DbConfig
     }
 
 
-
-
     public string GetConnectionString()
     {
         return string.IsNullOrEmpty(Password)
@@ -40,6 +35,4 @@ public class DbConfig
             : "server='" + Host + "';user='" + User + "';database='" + DatabaseName + "';port=" + Port + ";password='" +
               Password + "'";
     }
-
-   
 }

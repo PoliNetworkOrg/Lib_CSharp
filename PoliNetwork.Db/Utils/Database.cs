@@ -17,7 +17,7 @@ public static class Database
         var connection = new MySqlConnection(dbConfig.GetConnectionString());
 
         if (LoggerDb.Logger != null)
-            LoggerDb.Logger.Invoke(query,args);
+            LoggerDb.Logger.Invoke(query, args);
 
         var cmd = new MySqlCommand(query, connection);
 
@@ -39,7 +39,7 @@ public static class Database
         var connection = new MySqlConnection(dbConfig?.GetConnectionString());
 
         if (LoggerDb.Logger != null)
-            LoggerDb.Logger.Invoke(query,args);
+            LoggerDb.Logger.Invoke(query, args);
 
         var cmd = new MySqlCommand(query, connection);
 

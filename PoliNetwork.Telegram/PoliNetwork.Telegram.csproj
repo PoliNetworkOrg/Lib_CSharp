@@ -28,10 +28,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        
-        <None Include=".\icon.png" Pack="true" PackagePath="" />
-        <None Include=".\README.md" Pack="true" PackagePath="" />
-        
+
+        <None Include=".\icon.png" Pack="true" PackagePath=""/>
+        <None Include=".\README.md" Pack="true" PackagePath=""/>
+
     </ItemGroup>
 
     <ItemGroup>
@@ -41,7 +41,7 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
 
-        <PackageReference Include="Telegram.Bot" Version="19.0.0" />
+        <PackageReference Include="Telegram.Bot" Version="19.0.0"/>
 
     </ItemGroup>
 </Project>
