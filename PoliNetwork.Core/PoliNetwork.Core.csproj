@@ -16,4 +16,10 @@
         <PackageTags>polinetwork, library, core</PackageTags>
     </PropertyGroup>
 
+    <ItemGroup>
+        
+        <None Include=".\icon.png" Pack="true" PackagePath=""/>
+        
+    </ItemGroup>
+
 </Project>
