@@ -1,19 +1,24 @@
 @startuml
+!pragma layout elk
 hide empty description
 
-[*] -down-> PoliFemoBackend
-[*] -down-> Graduatorie
-[*] -down-> Bot
+[*] -down-> PoliNetwork.Graduatorie
+[*] -down-> PoliNetwork.Bot
+[*] -down-> PoliNetwork.PoliFemoBackend 
 
-Bot -down-> Lib.Db
-Bot -down-> Lib.Core
-Bot -down-> Lib.Telegram
-Graduatorie -down-> Lib.Core
-PoliFemoBackend -down-> Lib.Core
-PoliFemoBackend --down-> Lib.Db
 
-Lib.Db -> Lib.Core
-Lib.Telegram -> Lib.Core
-Lib.Core --> [*]
+PoliNetwork.Bot --> PoliNetwork.Lib.Db
+PoliNetwork.Bot --> PoliNetwork.Lib.Core
+PoliNetwork.Bot -> PoliNetwork.Lib.Telegram
+PoliNetwork.Graduatorie --> PoliNetwork.Lib.Core
+PoliNetwork.PoliFemoBackend --> PoliNetwork.Lib.Core
+PoliNetwork.PoliFemoBackend ---> PoliNetwork.Lib.Db
+
+PoliNetwork.Lib.Db -> PoliNetwork.Lib.Core
+PoliNetwork.Lib.Telegram -> PoliNetwork.Lib.Core
+
+
+PoliNetwork.Lib.Telegram --> TelegramBots.Telegram.Bot
+
 
 @enduml
