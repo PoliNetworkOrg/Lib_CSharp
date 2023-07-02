@@ -12,6 +12,8 @@
         <LangVersion>11</LangVersion>
         <Description>Core C# library of PoliNetwork</Description>
         <Copyright>PoliNetwork</Copyright>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageTags>polinetwork, library, core</PackageTags>
     </PropertyGroup>
 
 </Project>
