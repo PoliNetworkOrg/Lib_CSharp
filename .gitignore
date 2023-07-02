@@ -10,3 +10,5 @@ PoliNetwork.Core/PoliNetwork.Core/obj/
 PoliNetwork.Core/bin/
 
 PoliNetwork.Core/obj/
+
+*.nupkg
