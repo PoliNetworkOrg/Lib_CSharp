@@ -16,3 +16,7 @@ PoliNetwork.Core/obj/
 PoliNetwork.Telegram/bin/
 
 PoliNetwork.Telegram/obj/
+
+PoliNetwork.Db/bin/
+
+PoliNetwork.Db/obj/
