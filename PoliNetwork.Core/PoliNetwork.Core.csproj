@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Version>0.0.1</Version>
@@ -9,6 +9,7 @@
         <Authors>PoliNetwork</Authors>
         <PackageProjectUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</PackageProjectUrl>
         <RepositoryUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</RepositoryUrl>
+        <LangVersion>11</LangVersion>
     </PropertyGroup>
 
 </Project>
