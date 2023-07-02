@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Core", "PoliNet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Telegram", "PoliNetwork.Telegram\PoliNetwork.Telegram.csproj", "{3E21EC47-1150-4867-93AD-FAA9C8BC50BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Db", "PoliNetwork.Db\PoliNetwork.Db.csproj", "{23142DB6-7D60-4132-ADFE-4D26A30E4A21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{3E21EC47-1150-4867-93AD-FAA9C8BC50BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E21EC47-1150-4867-93AD-FAA9C8BC50BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E21EC47-1150-4867-93AD-FAA9C8BC50BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23142DB6-7D60-4132-ADFE-4D26A30E4A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23142DB6-7D60-4132-ADFE-4D26A30E4A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23142DB6-7D60-4132-ADFE-4D26A30E4A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23142DB6-7D60-4132-ADFE-4D26A30E4A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
