@@ -12,3 +12,7 @@ PoliNetwork.Core/bin/
 PoliNetwork.Core/obj/
 
 *.nupkg
+
+PoliNetwork.Telegram/bin/
+
+PoliNetwork.Telegram/obj/
