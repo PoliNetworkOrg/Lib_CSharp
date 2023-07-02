@@ -1,4 +1,4 @@
-﻿namespace PoliNetwork.Core;
+namespace PoliNetwork.Db;
 
 /***
  * Test class
