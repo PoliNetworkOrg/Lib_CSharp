@@ -17,8 +17,10 @@ PoliNetwork.PoliFemoBackend ---> PoliNetwork.Lib.Db
 PoliNetwork.Lib.Db -> PoliNetwork.Lib.Core
 PoliNetwork.Lib.Telegram -> PoliNetwork.Lib.Core
 
-
+PoliNetwork.Lib.Db --> Newtonsoft.Json
+PoliNetwork.Lib.Db --> MySql.Data
 PoliNetwork.Lib.Telegram --> TelegramBots.Telegram.Bot
+
 
 
 @enduml
