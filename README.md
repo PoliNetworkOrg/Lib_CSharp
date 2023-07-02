@@ -9,3 +9,8 @@ Questa libreria contiene codice che (generalmente parlando) non ha dipendenze. P
 Used by
 
 * https://github.com/PoliNetworkOrg/PoliFemoBackend
+
+
+## Telegram
+
+Questa libreria...
