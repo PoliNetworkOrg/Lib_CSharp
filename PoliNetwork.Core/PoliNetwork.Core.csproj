@@ -14,11 +14,12 @@
         <Copyright>PoliNetwork</Copyright>
         <PackageIcon>icon.png</PackageIcon>
         <PackageTags>polinetwork, library, core</PackageTags>
+        <PackageLicenseUrl>https://opensource.org/license/mit/</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
         
-        <None Include=".\icon.png" Pack="true" PackagePath=""/>
+        <None Include=".\icon.png" Pack="true" PackagePath="" />
         
     </ItemGroup>
 
