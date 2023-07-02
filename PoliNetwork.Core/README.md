@@ -1,0 +1,3 @@
+## PoliNetwork.Core
+
+Core
