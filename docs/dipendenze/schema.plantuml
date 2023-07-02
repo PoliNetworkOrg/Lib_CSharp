@@ -1,0 +1,19 @@
+@startuml
+hide empty description
+
+[*] -down-> PoliFemoBackend
+[*] -down-> Graduatorie
+[*] -down-> Bot
+
+Bot -down-> Lib.Db
+Bot -down-> Lib.Core
+Bot -down-> Lib.Telegram
+Graduatorie -down-> Lib.Core
+PoliFemoBackend -down-> Lib.Core
+PoliFemoBackend --down-> Lib.Db
+
+Lib.Db -> Lib.Core
+Lib.Telegram -> Lib.Core
+Lib.Core --> [*]
+
+@enduml
