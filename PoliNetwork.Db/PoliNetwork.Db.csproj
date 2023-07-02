@@ -7,15 +7,15 @@
         <WarningsAsErrors>Nullable</WarningsAsErrors>
         <WarningsAsErrors>1591</WarningsAsErrors>
         <Version>0.0.1</Version>
-        <Title>PoliNetwork.Telegram</Title>
+        <Title>PoliNetwork.Db</Title>
         <Authors>PoliNetwork</Authors>
         <PackageProjectUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</PackageProjectUrl>
         <RepositoryUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</RepositoryUrl>
         <LangVersion>11</LangVersion>
-        <Description>Telegram C# library of PoliNetwork</Description>
+        <Description>Db C# library of PoliNetwork</Description>
         <Copyright>PoliNetwork</Copyright>
         <PackageIcon>icon.png</PackageIcon>
-        <PackageTags>polinetwork, library, telegram</PackageTags>
+        <PackageTags>polinetwork, library, database</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryType>library</RepositoryType>
         <AssemblyVersion>0.0.1</AssemblyVersion>
