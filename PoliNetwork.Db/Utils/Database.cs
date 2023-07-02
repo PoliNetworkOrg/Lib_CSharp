@@ -1,6 +1,7 @@
 #region
 
 using System.Data;
+using MySql.Data.MySqlClient;
 
 #endregion
 
@@ -15,7 +16,7 @@ public static class Database
 
         var connection = new MySqlConnection(dbConfig.GetConnectionString());
 
-        Logger.LogQuery(query, args);
+        //Logger.LogQuery(query, args);
 
         var cmd = new MySqlCommand(query, connection);
 
@@ -34,11 +35,9 @@ public static class Database
 
     public static DataTable? ExecuteSelect(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
     {
-        dbConfig ??= GlobalVariables.DbConfigVar;
-
         var connection = new MySqlConnection(dbConfig?.GetConnectionString());
 
-        Logger.LogQuery(query, args);
+        //Logger.LogQuery(query, args);
 
         var cmd = new MySqlCommand(query, connection);
 
@@ -71,7 +70,7 @@ public static class Database
     }
 
     // ReSharper disable once UnusedMember.Global
-    internal static object? GetFirstValueFromDataTable(DataTable? dt)
+    public static object? GetFirstValueFromDataTable(DataTable? dt)
     {
         try
         {
