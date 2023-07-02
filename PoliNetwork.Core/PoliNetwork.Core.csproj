@@ -10,6 +10,8 @@
         <PackageProjectUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</PackageProjectUrl>
         <RepositoryUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</RepositoryUrl>
         <LangVersion>11</LangVersion>
+        <Description>Core C# library of PoliNetwork</Description>
+        <Copyright>PoliNetwork</Copyright>
     </PropertyGroup>
 
 </Project>
