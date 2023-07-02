@@ -16,6 +16,9 @@
         <PackageTags>polinetwork, library, core</PackageTags>
         <PackageLicenseUrl>https://opensource.org/license/mit/</PackageLicenseUrl>
         <RepositoryType>library</RepositoryType>
+        <AssemblyVersion>0.0.1</AssemblyVersion>
+        <FileVersion>0.0.1</FileVersion>
+        <NeutralLanguage>en-US</NeutralLanguage>
     </PropertyGroup>
 
     <ItemGroup>
