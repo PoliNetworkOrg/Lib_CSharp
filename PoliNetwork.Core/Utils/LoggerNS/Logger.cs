@@ -2,64 +2,49 @@ namespace PoliNetwork.Core.Utils.LoggerNS;
 
 public class Logger
 {
-    public LogLevel Level;
-    private bool isWriteToFileEnabled = false;
-    private string logFilePath = "";
+    private readonly LogLevel _level;
+    private readonly bool _isWriteToFileEnabled = false;
+    private readonly string _logFilePath = "";
 
     public Logger(LogLevel? level, string? logFolderPath)
     {
-        this.Level = level ?? LogLevel.WARNING;
+        this._level = level ?? LogLevel.WARNING;
 
-        if (string.IsNullOrEmpty(logFilePath))
+        if (string.IsNullOrEmpty(_logFilePath))
             return;
 
-        this.isWriteToFileEnabled = true;
-        this.logFilePath = Path.Join(logFolderPath, DateTime.Now.ToString("yyyyMMdd_HHmmss"), ".log");
+        this._isWriteToFileEnabled = true;
+        this._logFilePath = Path.Join(logFolderPath, DateTime.Now.ToString("yyyyMMdd_HHmmss"), ".log");
     }
 
     private void WriteToFile(string message)
     {
-        if (!isWriteToFileEnabled || string.IsNullOrEmpty(logFilePath))
+        if (!_isWriteToFileEnabled || string.IsNullOrEmpty(_logFilePath))
             return;
 
-        using (StreamWriter writer = new StreamWriter(this.logFilePath, true))
-        {
-            writer.WriteLine(message);
-        }
+        using var writer = new StreamWriter(this._logFilePath, true);
+        writer.WriteLine(message);
     }
 
-    private void SetConsoleColor(LogLevel level) {
-        switch (level)
+    private static void SetConsoleColor(LogLevel level)
+    {
+        Console.ForegroundColor = level switch
         {
-            case LogLevel.DEBUG:
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                break;
-                
-            case LogLevel.INFO:
-                Console.ForegroundColor = ConsoleColor.White;
-                break;
-
-            case LogLevel.WARNING:
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                break;
-
-            case LogLevel.ERROR:
-                Console.ForegroundColor = ConsoleColor.Red;
-                break;
-
-            case LogLevel.EMERGENCY:
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                break;
-        }
-
+            LogLevel.DEBUG => ConsoleColor.Cyan,
+            LogLevel.INFO => ConsoleColor.White,
+            LogLevel.WARNING => ConsoleColor.Yellow,
+            LogLevel.ERROR => ConsoleColor.Red,
+            LogLevel.EMERGENCY => ConsoleColor.Magenta,
+            _ => Console.ForegroundColor
+        };
     }
 
     private void Write(LogLevel level, string message)
     {
-        if (level < this.Level) return;
+        if (level < this._level) return;
 
-        string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        string messageWithTimestamp = $"{timestamp} [{level}] \t{message}";
+        var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        var messageWithTimestamp = $"{timestamp} [{level}] \t{message}";
 
         WriteToFile(messageWithTimestamp);
         SetConsoleColor(level);
@@ -89,6 +74,6 @@ public class Logger
 
     public void Debug(string message)
     {
-        this.Write(LogLevel.INFO, message);
+        this.Write(LogLevel.DEBUG, message);
     }
 }
