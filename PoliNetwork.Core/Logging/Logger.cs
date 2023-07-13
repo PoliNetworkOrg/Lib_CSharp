@@ -28,7 +28,6 @@ public class Logger
         }
     }
 
-
     public static void WriteLine(object? log, LogSeverityLevel logSeverityLevel = LogSeverityLevel.Info)
     {
         if (log == null || string.IsNullOrEmpty(log.ToString()) ||
