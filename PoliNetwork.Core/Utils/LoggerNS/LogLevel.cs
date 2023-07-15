@@ -2,9 +2,10 @@ namespace PoliNetwork.Core.Utils.LoggerNS;
 
 public enum LogLevel
 {
-    EMERGENCY = 5,
-    ERROR = 4,
-    WARNING = 3,
-    INFO = 2,
-    DEBUG = 1
+    EMERGENCY = 6,
+    ERROR = 5,
+    WARNING = 4,
+    INFO = 3,
+    DEBUG = 2,
+    DBQUERY = 1
 }

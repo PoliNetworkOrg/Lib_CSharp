@@ -76,4 +76,9 @@ public class Logger
     {
         Write(LogLevel.DEBUG, message);
     }
+
+    public void DbQuery(string message)
+    {
+        Write(LogLevel.DBQUERY, message);
+    }
 }
