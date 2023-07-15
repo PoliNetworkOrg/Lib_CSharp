@@ -20,7 +20,7 @@ public static class Database
             LoggerDb.Logger.Invoke(query, args);
 
         var cmd = new MySqlCommand(query, connection);
-        
+
         if (args != null)
             foreach (var (key, value) in args) {
                 cmd.Parameters.AddWithValue(key, value);
