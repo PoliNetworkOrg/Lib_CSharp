@@ -20,11 +20,15 @@ public static class Database
             LoggerDb.Logger.Invoke(query, args);
 
         var cmd = new MySqlCommand(query, connection);
-
+        
         if (args != null)
-            foreach (var (key, value) in args)
+            foreach (var (key, value) in args) {
                 cmd.Parameters.AddWithValue(key, value);
+                query = query.Replace(key, value?.ToString() ?? "NULL");
+            }
 
+        dbConfig.Logger?.DbQuery(query);
+        
         OpenConnection(connection);
 
         int? numberOfRowsAffected = null;
@@ -54,6 +58,13 @@ public static class Database
             SelectCommand = cmd
         };
 
+        if (dbConfig != null)
+        {
+            if (args != null)
+                foreach (var (key, value) in args)
+                    query = query.Replace(key, value?.ToString() ?? "NULL");
+            dbConfig.Logger?.DbQuery(query);
+        }
 
         if (connection.State != ConnectionState.Open)
             return default;

@@ -1,6 +1,7 @@
 #region
 
 using Newtonsoft.Json;
+using PoliNetwork.Core.Utils.LoggerNS;
 
 #endregion
 
@@ -16,6 +17,11 @@ public class DbConfig
     public string? Password;
     public int Port;
     public string? User;
+    public Logger Logger;
+
+    public DbConfig(Logger logger) {
+        Logger = logger;
+    }
 
 
     public void FixName()
