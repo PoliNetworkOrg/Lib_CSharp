@@ -14,7 +14,7 @@ public class Logger
             return;
 
         _isWriteToFileEnabled = true;
-        _logFilePath = Path.Join(logFolderPath, DateTime.Now.ToString("yyyyMMdd_HHmmss"), ".log");
+        _logFilePath = Path.Join(logFolderPath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"), ".log");
     }
 
     private void WriteToFile(string message)
@@ -43,7 +43,7 @@ public class Logger
     {
         if (level < _level) return;
 
-        var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
         var messageWithTimestamp = $"{timestamp} [{level}] \t{message}";
 
         WriteToFile(messageWithTimestamp);
