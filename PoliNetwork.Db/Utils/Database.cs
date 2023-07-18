@@ -2,6 +2,7 @@
 
 using System.Data;
 using MySql.Data.MySqlClient;
+using PoliNetwork.Db.Objects;
 
 #endregion
 
@@ -15,9 +16,8 @@ public static class Database
         if (dbConfig == null) return default;
 
         var connection = new MySqlConnection(dbConfig.GetConnectionString());
-
-        if (LoggerDb.Logger != null)
-            LoggerDb.Logger.Invoke(query, args);
+        
+        LoggerDb.Logger?.Invoke(new QueryArgs(){Query = query, Args = args});
 
         var cmd = new MySqlCommand(query, connection);
 
@@ -27,7 +27,7 @@ public static class Database
                 query = query.Replace(key, value?.ToString() ?? "NULL");
             }
 
-        dbConfig.Logger?.DbQuery(query);
+        dbConfig.Logger.DbQuery(query);
         
         OpenConnection(connection);
 
@@ -41,10 +41,9 @@ public static class Database
     public static DataTable? ExecuteSelect(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
     {
         var connection = new MySqlConnection(dbConfig?.GetConnectionString());
-
-        if (LoggerDb.Logger != null)
-            LoggerDb.Logger.Invoke(query, args);
-
+        
+        LoggerDb.Logger?.Invoke(new QueryArgs(){Query = query, Args = args});
+        
         var cmd = new MySqlCommand(query, connection);
 
         if (args != null)
@@ -63,7 +62,7 @@ public static class Database
             if (args != null)
                 foreach (var (key, value) in args)
                     query = query.Replace(key, value?.ToString() ?? "NULL");
-            dbConfig.Logger?.DbQuery(query);
+            dbConfig.Logger.DbQuery(query);
         }
 
         if (connection.State != ConnectionState.Open)
