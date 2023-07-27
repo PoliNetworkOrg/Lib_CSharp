@@ -1,4 +1,7 @@
 using Telegram.Bot;
+using Telegram.Bot.Exceptions;
+using Telegram.Bot.Polling;
+using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
 namespace PoliNetwork.Telegram.Objects;
@@ -12,26 +15,35 @@ public class TelegramBotWrapper
         this._telegramBotClient = new TelegramBotClient(token);
     }
 
-    private void SendMessage(long chatId, string text)
+    
+    public void Start(Func<ITelegramBotClient, Update, CancellationToken, Task> handleUpdateAsync)
     {
-        this._telegramBotClient?.SendTextMessageAsync(chatId, text);
-    }
-
-
-    public void CheckUpdatesAndRun()
-    {
-        var updates = this._telegramBotClient?.GetUpdatesAsync();
-        updates?.Wait();
-        var updatesList = updates?.Result;
-        if (updatesList == null) return;
-        foreach (var update in updatesList)
+        // StartReceiving does not block the caller thread. Receiving is done on the ThreadPool.
+        ReceiverOptions receiverOptions = new ()
         {
-            if (update.Type != UpdateType.Message) continue;
-            var variableMessage = update.Message;
-            var variableMessageFrom = variableMessage?.From;
-            if (variableMessageFrom == null) continue;
-            if (variableMessage?.Text != null)
-                this.SendMessage(variableMessageFrom.Id, variableMessage.Text);
-        }
+            AllowedUpdates = Array.Empty<UpdateType>() // receive all update types except ChatMember related updates
+        };
+        
+        this._telegramBotClient?.StartReceiving(
+            updateHandler: handleUpdateAsync,
+            pollingErrorHandler: HandlePollingErrorAsync,
+            receiverOptions: receiverOptions
+        );
+
     }
+
+    private static Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+    {
+        var errorMessage = exception switch
+        {
+            ApiRequestException apiRequestException
+                => $"Telegram API Error:\n[{apiRequestException.ErrorCode}]\n{apiRequestException.Message}",
+            _ => exception.ToString()
+        };
+
+        Console.WriteLine(errorMessage);
+        return Task.CompletedTask;
+    }
+
+
 } 
