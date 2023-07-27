@@ -32,6 +32,7 @@ public class TelegramBotWrapper
 
     }
 
+    
     private static Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
     {
         var errorMessage = exception switch
