@@ -5,19 +5,19 @@ using Telegram.Bot.Types;
 namespace PoliNetwork.Telegram.Objects.Bot;
 
 /// <summary>
-/// Telegram Bot Test class used in PoliNetwork projects
+///     Telegram Bot Test class used in PoliNetwork projects
 /// </summary>
 public class TestBot : ITelegramBotWrapper
 {
     private readonly Logger _logger;
-    
+
     public TestBot()
     {
-        this._logger = new Logger();
+        _logger = new Logger();
     }
-    
+
     /// <summary>
-    /// Start receiving and handling updates (dummy)
+    ///     Start receiving and handling updates (dummy)
     /// </summary>
     /// <param name="handleUpdateAsync"></param>
     public void Start(Func<ITelegramBotClient, Update, CancellationToken, Task> handleUpdateAsync)
@@ -37,6 +37,6 @@ public class TestBot : ITelegramBotWrapper
 
     public Logger GetLogger()
     {
-        return this._logger;
+        return _logger;
     }
 }

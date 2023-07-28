@@ -5,7 +5,8 @@ namespace PoliNetwork.Telegram.Utils;
 
 public static class Echo
 {
-    public static async Task EchoMethod(Message message, ITelegramBotWrapper telegramBotClient, CancellationToken cancellationToken)
+    public static async Task EchoMethod(Message message, ITelegramBotWrapper telegramBotClient,
+        CancellationToken cancellationToken)
     {
         // Only process text messages
         if (message.Text is not { } messageText)
@@ -14,11 +15,11 @@ public static class Echo
         var chatId = message.Chat.Id;
 
         // Echo received message text
-        var sentMessage =  await telegramBotClient.SendTextMessageAsync(
-            chatId: chatId,
-            text: "You said:\n" + messageText,
-            cancellationToken: cancellationToken);
-        
+        var sentMessage = await telegramBotClient.SendTextMessageAsync(
+            chatId,
+            "You said:\n" + messageText,
+            cancellationToken);
+
         telegramBotClient.GetLogger().Info(
             $"Received a '{messageText}' message in chat {chatId}. Sent {sentMessage?.MessageId} as id of the reply");
     }

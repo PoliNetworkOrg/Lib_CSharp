@@ -7,7 +7,7 @@ public class Logger
     private readonly string _logFilePath = "";
 
     /// <summary>
-    /// Instantiate a logger object
+    ///     Instantiate a logger object
     /// </summary>
     /// <param name="level">the level of the logger (default: Warning)</param>
     /// <param name="logFolderPath">the folder where the logs are going to be written into</param>
@@ -19,7 +19,7 @@ public class Logger
         if (string.IsNullOrEmpty(_logFilePath))
             return;
 
-        this._isWriteToFileEnabled = isWriteToFileEnabled;
+        _isWriteToFileEnabled = isWriteToFileEnabled;
         _logFilePath = Path.Join(logFolderPath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"), ".log");
     }
 
