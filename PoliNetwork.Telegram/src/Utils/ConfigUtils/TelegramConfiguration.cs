@@ -1,6 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿#region
+
+using Newtonsoft.Json;
 using PoliNetwork.Core.Data;
 using PoliNetwork.Telegram.Objects.Configuration;
+
+#endregion
 
 namespace PoliNetwork.Telegram.Utils.ConfigUtils;
 
