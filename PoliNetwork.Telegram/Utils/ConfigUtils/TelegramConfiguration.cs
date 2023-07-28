@@ -5,7 +5,6 @@ using PoliNetwork.Telegram.Objects.Configuration;
 namespace PoliNetwork.Telegram.Utils.ConfigUtils;
 
 /// <summary>
-/// 
 /// </summary>
 public static class TelegramConfigUtils
 {
@@ -23,15 +22,13 @@ public static class TelegramConfigUtils
                 GlobalVariables.DefaultLogger.Error(e);
                 throw;
             }
+
             return null;
         }
 
         var json = File.ReadAllText(path);
         var config2 = JsonConvert.DeserializeObject<TelegramConfig>(json);
-        if (config2 == null)
-        {
-            GlobalVariables.DefaultLogger.Emergency("Config file could not be deserialized.");
-        }
+        if (config2 == null) GlobalVariables.DefaultLogger.Emergency("Config file could not be deserialized.");
         return config2;
     }
 }
