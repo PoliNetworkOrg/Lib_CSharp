@@ -5,6 +5,12 @@ namespace PoliNetwork.Telegram.Utils;
 
 public static class Echo
 {
+    /// <summary>
+    /// Method to echo back whatever message we received
+    /// </summary>
+    /// <param name="message">the message we need to echo to</param>
+    /// <param name="telegramBotClient">bot</param>
+    /// <param name="cancellationToken">cancellationToken</param>
     public static async Task EchoMethod(Message message, ITelegramBotWrapper telegramBotClient,
         CancellationToken cancellationToken)
     {

@@ -50,11 +50,22 @@ public class TelegramBot : ITelegramBotWrapper
         _logger.Info($"Starting receiving messages. {GetUserString()}");
     }
 
+    /// <summary>
+    ///     Send a text message
+    /// </summary>
+    /// <param name="chatId">chatId to send to</param>
+    /// <param name="text">text</param>
+    /// <param name="cancellationToken">cancellationToken</param>
+    /// <returns></returns>
     public async Task<Message?> SendTextMessageAsync(long chatId, string text, CancellationToken cancellationToken)
     {
         return await _telegramBotClient.SendTextMessageAsync(chatId, text, cancellationToken: cancellationToken);
     }
 
+    /// <summary>
+    ///     Get logger
+    /// </summary>
+    /// <returns>logger</returns>
     public Logger GetLogger()
     {
         return _logger;
