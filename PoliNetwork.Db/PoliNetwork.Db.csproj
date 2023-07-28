@@ -29,8 +29,8 @@
 
     <ItemGroup>
 
-        <None Include=".\icon.png" Pack="true" PackagePath="" />
-        <None Include=".\README.md" Pack="true" PackagePath="" />
+        <None Include=".\icon.png" Pack="true" PackagePath=""/>
+        <None Include=".\README.md" Pack="true" PackagePath=""/>
 
     </ItemGroup>
 
@@ -41,13 +41,13 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
 
-        <PackageReference Include="MySql.Data" Version="8.0.33" />
+        <PackageReference Include="MySql.Data" Version="8.0.33"/>
 
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
 
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PoliNetwork.Core\PoliNetwork.Core.csproj" />
+        <ProjectReference Include="..\PoliNetwork.Core\PoliNetwork.Core.csproj"/>
     </ItemGroup>
 </Project>

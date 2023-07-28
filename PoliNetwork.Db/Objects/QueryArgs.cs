@@ -7,6 +7,6 @@ namespace PoliNetwork.Db.Objects;
 [JsonObject(MemberSerialization.Fields, NamingStrategyType = typeof(CamelCaseNamingStrategy))]
 public class QueryArgs
 {
-    public string? Query;
     public Dictionary<string, object?>? Args;
+    public string? Query;
 }

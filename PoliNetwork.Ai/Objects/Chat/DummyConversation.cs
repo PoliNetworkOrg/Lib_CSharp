@@ -2,8 +2,8 @@ namespace PoliNetwork.Ai.Objects.Chat;
 
 public class DummyConversation : IConversation
 {
-    private int _i = 0; 
-    
+    private int _i;
+
     public string GetAnswer(string query)
     {
         _i++;

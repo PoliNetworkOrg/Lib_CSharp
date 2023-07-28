@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-
 namespace PoliNetwork.Core.Utils.LoggerNS;
 
 public class Logger

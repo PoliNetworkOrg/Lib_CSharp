@@ -14,7 +14,7 @@ public abstract class Bing : IGenericAi
             Tone = bingChatTone
         });
     }
-    
+
     public string GetAnswer(string query, IConversation? conversation = null)
     {
         return conversation != null ? conversation.GetAnswer(query) : _client.AskAsync(query).Result;

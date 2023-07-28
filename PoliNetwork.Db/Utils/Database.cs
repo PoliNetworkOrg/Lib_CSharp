@@ -16,19 +16,20 @@ public static class Database
         if (dbConfig == null) return default;
 
         var connection = new MySqlConnection(dbConfig.GetConnectionString());
-        
-        LoggerDb.Logger?.Invoke(new QueryArgs(){Query = query, Args = args});
+
+        LoggerDb.Logger?.Invoke(new QueryArgs { Query = query, Args = args });
 
         var cmd = new MySqlCommand(query, connection);
 
         if (args != null)
-            foreach (var (key, value) in args) {
+            foreach (var (key, value) in args)
+            {
                 cmd.Parameters.AddWithValue(key, value);
                 query = query.Replace(key, value?.ToString() ?? "NULL");
             }
 
         dbConfig.Logger.DbQuery(query);
-        
+
         OpenConnection(connection);
 
         int? numberOfRowsAffected = null;
@@ -41,9 +42,9 @@ public static class Database
     public static DataTable? ExecuteSelect(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
     {
         var connection = new MySqlConnection(dbConfig?.GetConnectionString());
-        
-        LoggerDb.Logger?.Invoke(new QueryArgs(){Query = query, Args = args});
-        
+
+        LoggerDb.Logger?.Invoke(new QueryArgs { Query = query, Args = args });
+
         var cmd = new MySqlCommand(query, connection);
 
         if (args != null)

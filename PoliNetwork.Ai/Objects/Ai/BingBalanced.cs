@@ -6,6 +6,5 @@ public class BingBalanced : Bing
 {
     public BingBalanced() : base(BingChatTone.Balanced)
     {
-        
     }
 }
