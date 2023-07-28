@@ -3,6 +3,7 @@ using PoliNetwork.Ai.Objects.Chat;
 
 namespace PoliNetwork.Ai.Objects.Ai;
 
+
 public abstract class Bing : IGenericAi
 {
     private readonly BingChatClient _client;
@@ -14,6 +15,7 @@ public abstract class Bing : IGenericAi
             Tone = bingChatTone
         });
     }
+
 
     public string GetAnswer(string query, IConversation? conversation = null)
     {
