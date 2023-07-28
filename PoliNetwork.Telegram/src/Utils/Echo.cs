@@ -1,5 +1,4 @@
 using PoliNetwork.Telegram.Objects.Bot;
-using Telegram.Bot.Types;
 
 namespace PoliNetwork.Telegram.Utils;
 
