@@ -24,3 +24,17 @@ PoliNetwork.Db/obj/
 PoliNetwork.Ai/bin/
 
 PoliNetwork.Ai/obj/
+
+PoliNetwork.Ai/src/bin/
+
+PoliNetwork.Core/src/bin/
+
+PoliNetwork.Core/src/obj/
+
+PoliNetwork.Db/src/bin/
+
+PoliNetwork.Db/src/obj/
+
+PoliNetwork.Telegram/src/bin/
+
+PoliNetwork.Telegram/src/obj/
