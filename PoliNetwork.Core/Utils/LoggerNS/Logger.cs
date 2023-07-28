@@ -2,33 +2,21 @@ namespace PoliNetwork.Core.Utils.LoggerNS;
 
 public class Logger
 {
-    private readonly bool _isWriteToFileEnabled;
-    private readonly LogLevel _level;
-    private readonly string _logFilePath = "";
+    private readonly LogConfig _logConfig;
 
     /// <summary>
     ///     Instantiate a logger object
     /// </summary>
-    /// <param name="level">the level of the logger (default: Warning)</param>
-    /// <param name="logFolderPath">the folder where the logs are going to be written into</param>
-    /// <param name="isWriteToFileEnabled">if the log are going to be written into files</param>
-    public Logger(LogLevel level = LogLevel.WARNING, string? logFolderPath = null, bool isWriteToFileEnabled = true)
+    /// <param name="logConfig">config for the logger</param>
+    public Logger(LogConfig? logConfig = null)
     {
-        _level = level;
-
-        if (string.IsNullOrEmpty(_logFilePath))
-            return;
-
-        _isWriteToFileEnabled = isWriteToFileEnabled;
-        _logFilePath = Path.Join(logFolderPath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"), ".log");
+        this._logConfig = logConfig ?? new LogConfig();
     }
 
     private void WriteToFile(string message)
     {
-        if (!_isWriteToFileEnabled || string.IsNullOrEmpty(_logFilePath))
-            return;
-
-        using var writer = new StreamWriter(_logFilePath, true);
+        if (!this._logConfig.CanWriteToFile()) return;
+        using var writer = new StreamWriter(this._logConfig.LogFilePath, true);
         writer.WriteLine(message);
     }
 
@@ -47,7 +35,7 @@ public class Logger
 
     private void Write(LogLevel level, string message)
     {
-        if (level < _level) return;
+        if (level < this._logConfig.Level) return;
 
         var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
         var messageWithTimestamp = $"{timestamp} [{level}] \t{message}";
