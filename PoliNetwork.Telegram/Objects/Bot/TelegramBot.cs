@@ -24,7 +24,9 @@ public class TelegramBot : ITelegramBotWrapper
     /// <param name="logConfig">configuration for logger</param>
     public TelegramBot(TelegramConfig config, LogConfig? logConfig = null)
     {
-        _telegramBotClient = new TelegramBotClient(new TelegramBotClientOptions(token: config.Token, baseUrl: config.BaseUrl, useTestEnvironment: config.UseTestEnvironment));
+        _telegramBotClient =
+            new TelegramBotClient(new TelegramBotClientOptions(config.Token, config.BaseUrl,
+                config.UseTestEnvironment));
         _logger = new Logger(logConfig);
         _user = _telegramBotClient.GetMeAsync().Result;
         _logger.Info($"Generated bot. {GetUserString()}");
