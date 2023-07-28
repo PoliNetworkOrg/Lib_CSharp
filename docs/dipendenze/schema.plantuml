@@ -14,13 +14,13 @@ PoliNetwork.Graduatorie --> PoliNetwork.Lib.Core
 PoliNetwork.PoliFemoBackend --> PoliNetwork.Lib.Core
 PoliNetwork.PoliFemoBackend ---> PoliNetwork.Lib.Db
 
+PoliNetwork.Lib.Ai -> PoliNetwork.Lib.Core
 PoliNetwork.Lib.Db -> PoliNetwork.Lib.Core
 PoliNetwork.Lib.Telegram -> PoliNetwork.Lib.Core
 
 PoliNetwork.Lib.Db --> Newtonsoft.Json
 PoliNetwork.Lib.Db --> MySql.Data
 PoliNetwork.Lib.Telegram --> TelegramBots.Telegram.Bot
-
-
+PoliNetwork.Lib.Ai -> bsdayo.BingChat
 
 @enduml
