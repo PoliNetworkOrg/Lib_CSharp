@@ -1,6 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿#region
+
+using Newtonsoft.Json;
 using PoliNetwork.Core.Data;
 using PoliNetwork.Core.Utils.LoggerNS;
+
+#endregion
 
 namespace PoliNetwork.Db.Objects;
 

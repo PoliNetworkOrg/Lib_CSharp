@@ -1,4 +1,8 @@
-﻿using PoliNetwork.Db.Objects;
+﻿#region
+
+using PoliNetwork.Db.Objects;
+
+#endregion
 
 namespace PoliNetwork.Db.Utils;
 

@@ -1,5 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿#region
+
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+
+#endregion
 
 namespace PoliNetwork.Db.Objects;
 
