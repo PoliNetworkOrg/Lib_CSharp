@@ -29,6 +29,7 @@ public class Logger
             LogLevel.WARNING => ConsoleColor.Yellow,
             LogLevel.ERROR => ConsoleColor.Red,
             LogLevel.EMERGENCY => ConsoleColor.Magenta,
+            LogLevel.DBQUERY => ConsoleColor.Blue,
             _ => Console.ForegroundColor
         };
     }
