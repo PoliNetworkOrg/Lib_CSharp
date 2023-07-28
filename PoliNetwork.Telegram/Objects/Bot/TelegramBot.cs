@@ -1,4 +1,5 @@
 using PoliNetwork.Core.Utils.LoggerNS;
+using PoliNetwork.Telegram.Objects.Configuration;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
@@ -19,11 +20,11 @@ public class TelegramBot : ITelegramBotWrapper
     /// <summary>
     ///     Constructor. Generate the bot by token
     /// </summary>
-    /// <param name="token">token for the bot</param>
+    /// <param name="config">TelegramConfig object containing Database Config and </param>
     /// <param name="logConfig">configuration for logger</param>
-    public TelegramBot(string token, LogConfig? logConfig = null)
+    public TelegramBot(TelegramConfig config, LogConfig? logConfig = null)
     {
-        _telegramBotClient = new TelegramBotClient(token);
+        _telegramBotClient = new TelegramBotClient(new TelegramBotClientOptions(token: config.Token, baseUrl: config.BaseUrl, useTestEnvironment: config.UseTestEnvironment));
         _logger = new Logger(logConfig);
         _user = _telegramBotClient.GetMeAsync().Result;
         _logger.Info($"Generated bot. {GetUserString()}");

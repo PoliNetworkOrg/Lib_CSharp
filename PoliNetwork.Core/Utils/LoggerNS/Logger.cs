@@ -34,40 +34,41 @@ public class Logger
         };
     }
 
-    private void Write(LogLevel level, string message)
+    private void Write(LogLevel level, object message)
     {
         if (level < _logConfig.Level) return;
 
         var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
-        var messageWithTimestamp = $"{timestamp} [{level}] \t{message}";
+        var messageMetadata = $"{timestamp} [{level}] \t";
 
-        WriteToFile(messageWithTimestamp);
+        WriteToFile(messageMetadata + message);
         SetConsoleColor(level);
-        Console.WriteLine(messageWithTimestamp);
+        Console.Write(messageMetadata);
+        Console.WriteLine(message);
         Console.ResetColor();
     }
 
-    public void Emergency(string message)
+    public void Emergency(object message)
     {
         Write(LogLevel.EMERGENCY, message);
     }
 
-    public void Error(string message)
+    public void Error(object message)
     {
         Write(LogLevel.ERROR, message);
     }
 
-    public void Warning(string message)
+    public void Warning(object message)
     {
         Write(LogLevel.WARNING, message);
     }
 
-    public void Info(string message)
+    public void Info(object message)
     {
         Write(LogLevel.INFO, message);
     }
 
-    public void Debug(string message)
+    public void Debug(object message)
     {
         Write(LogLevel.DEBUG, message);
     }

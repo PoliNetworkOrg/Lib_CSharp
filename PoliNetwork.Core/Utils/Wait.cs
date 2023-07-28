@@ -7,7 +7,6 @@ public static class Wait
     /// </summary>
     public static void WaitForeverConsoleReadline()
     {
-        while (true) Console.ReadLine();
-        // ReSharper disable once FunctionNeverReturns
+        Thread.Sleep(Timeout.Infinite);
     }
 }
