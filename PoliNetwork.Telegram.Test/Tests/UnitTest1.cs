@@ -1,4 +1,4 @@
-namespace PoliNetwork.Core.Test;
+namespace PoliNetwork.Telegram.Test.Tests;
 
 public class Tests
 {

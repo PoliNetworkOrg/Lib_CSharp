@@ -1,4 +1,4 @@
-namespace PoliNetwork.Ai.Test;
+namespace PoliNetwork.Db.Test.Tests;
 
 public class Tests
 {
