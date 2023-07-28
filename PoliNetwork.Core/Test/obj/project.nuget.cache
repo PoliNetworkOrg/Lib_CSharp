@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AaTIu7dEHdV7K3Bwnf76DEuPk1mIaTzj5sINIBoJeJJAO+7lguM0od05gcj0OWFA/G+lZQAx/Hfo0JAbqJfFfQ==",
+  "dgSpecHash": "DyOlNL9JhHEHESuxWQbW4j50jOKP5mvLkOWqwzCFEhAF5VcNaVDOXlQYUY3z7gGbuAOMx1LvVHYK0You2i0ehg==",
   "success": true,
-  "projectFilePath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core.Test/PoliNetwork.Core.Test.csproj",
+  "projectFilePath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/Test/PoliNetwork.Core.Test.csproj",
   "expectedPackageFiles": [
     "/home/user/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/home/user/.nuget/packages/microsoft.codecoverage/17.3.2/microsoft.codecoverage.17.3.2.nupkg.sha512",

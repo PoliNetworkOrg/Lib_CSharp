@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PoliNetwork.Telegram.Test
-build_property.ProjectDir = /home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram.Test/
+build_property.ProjectDir = /home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/Test/

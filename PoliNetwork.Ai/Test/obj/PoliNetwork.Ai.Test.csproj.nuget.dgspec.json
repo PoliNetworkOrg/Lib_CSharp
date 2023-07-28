@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai.Test/PoliNetwork.Ai.Test.csproj": {}
+    "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai/Test/PoliNetwork.Ai.Test.csproj": {}
   },
   "projects": {
-    "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai.Test/PoliNetwork.Ai.Test.csproj": {
+    "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai/Test/PoliNetwork.Ai.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai.Test/PoliNetwork.Ai.Test.csproj",
+        "projectUniqueName": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai/Test/PoliNetwork.Ai.Test.csproj",
         "projectName": "PoliNetwork.Ai.Test",
-        "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai.Test/PoliNetwork.Ai.Test.csproj",
+        "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai/Test/PoliNetwork.Ai.Test.csproj",
         "packagesPath": "/home/user/.nuget/packages/",
-        "outputPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai.Test/obj/",
+        "outputPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Ai/Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/user/.nuget/NuGet/NuGet.Config"
