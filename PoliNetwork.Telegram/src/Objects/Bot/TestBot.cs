@@ -1,5 +1,4 @@
 using PoliNetwork.Core.Utils.LoggerNS;
-using Telegram.Bot;
 using Telegram.Bot.Types;
 
 namespace PoliNetwork.Telegram.Objects.Bot;
@@ -19,8 +18,7 @@ public class TestBot : ITelegramBotWrapper
     /// <summary>
     ///     Start receiving and handling updates (dummy)
     /// </summary>
-    /// <param name="handleUpdateAsync"></param>
-    public void Start(Func<ITelegramBotClient, Update, CancellationToken, Task> handleUpdateAsync)
+    public void Start(CancellationToken cancellationToken)
     {
     }
 

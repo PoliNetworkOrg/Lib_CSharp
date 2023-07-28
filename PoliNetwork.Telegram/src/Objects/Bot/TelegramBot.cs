@@ -16,14 +16,17 @@ public class TelegramBot : ITelegramBotWrapper
     private readonly Logger _logger; //logger
     private readonly TelegramBotClient _telegramBotClient; //telegram bot client
     private readonly User _user; //user object representing the bot
+    private readonly UpdateMethod _updateMethod;
 
     /// <summary>
     ///     Constructor. Generate the bot by token
     /// </summary>
     /// <param name="config">TelegramConfig object containing Database Config and </param>
+    /// <param name="updateMethod">updateMethod</param>
     /// <param name="logConfig">configuration for logger</param>
-    public TelegramBot(TelegramConfig config, LogConfig? logConfig = null)
+    public TelegramBot(TelegramConfig config, UpdateMethod updateMethod, LogConfig? logConfig = null)
     {
+        this._updateMethod = updateMethod;
         _telegramBotClient =
             new TelegramBotClient(new TelegramBotClientOptions(config.Token, config.BaseUrl,
                 config.UseTestEnvironment));
@@ -35,22 +38,28 @@ public class TelegramBot : ITelegramBotWrapper
     /// <summary>
     ///     Start receiving and handling updates
     /// </summary>
-    /// <param name="handleUpdateAsync">Method to handle updates</param>
-    public void Start(Func<ITelegramBotClient, Update, CancellationToken, Task> handleUpdateAsync)
+    /// <param name="cancellationToken">cancellationToken</param>
+    public void Start(CancellationToken cancellationToken)
     {
         // StartReceiving does not block the caller thread. Receiving is done on the ThreadPool.
         ReceiverOptions receiverOptions = new()
         {
             AllowedUpdates = Array.Empty<UpdateType>() // receive all update types except ChatMember related updates
         };
-
+        
         _telegramBotClient.StartReceiving(
-            handleUpdateAsync,
+            HandleUpdateAsync,
             HandlePollingErrorAsync,
-            receiverOptions
-        );
+            receiverOptions, 
+            cancellationToken: cancellationToken);
 
         _logger.Info($"Starting receiving messages. {GetUserString()}");
+    }
+    
+    Task HandleUpdateAsync(ITelegramBotClient aTelegramBotClient, Update bUpdate, CancellationToken cancellationToken)
+    {
+        this._updateMethod.Run(bUpdate, cancellationToken);
+        return Task.CompletedTask;
     }
 
     /// <summary>
