@@ -1,6 +1,3 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using PoliNetwork.Core.Utils.LoggerNS;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;

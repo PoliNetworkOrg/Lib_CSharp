@@ -1,4 +1,3 @@
-using System;
 using System.Diagnostics;
 
 namespace PoliNetwork.Core.Utils;

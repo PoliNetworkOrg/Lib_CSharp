@@ -3,13 +3,19 @@ using PoliNetwork.Ai.Objects.Chat;
 
 namespace PoliNetwork.Ai.Objects.Ai;
 
-public class Bing : IGenericAi
+public abstract class Bing : IGenericAi
 {
-    private readonly BingChatClient _client = new(new BingChatClientOptions
+    private readonly BingChatClient _client;
+
+    protected Bing(BingChatTone bingChatTone)
     {
-        Tone = BingChatTone.Balanced
-    });
-    
+        _client = new BingChatClient(new BingChatClientOptions
+        {
+            Tone = bingChatTone
+        });
+    }
+
+
     public string GetAnswer(string query, IConversation? conversation = null)
     {
         return conversation != null ? conversation.GetAnswer(query) : _client.AskAsync(query).Result;

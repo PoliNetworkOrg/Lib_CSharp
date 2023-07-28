@@ -1,5 +1,3 @@
-using System.Threading;
-using System.Threading.Tasks;
 using PoliNetwork.Telegram.Objects.Bot;
 using Telegram.Bot.Types;
 

@@ -14,12 +14,13 @@ public class DbConfig
     public string? Database;
     public string? DatabaseName;
     public string? Host;
+    public Logger Logger;
     public string? Password;
     public int Port;
     public string? User;
-    public Logger Logger;
 
-    public DbConfig(Logger logger) {
+    public DbConfig(Logger logger)
+    {
         Logger = logger;
     }
 
