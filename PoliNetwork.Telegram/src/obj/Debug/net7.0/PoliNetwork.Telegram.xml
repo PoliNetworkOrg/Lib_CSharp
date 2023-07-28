@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PoliNetwork.Telegram</name>
+    </assembly>
+    <members>
+        <member name="T:PoliNetwork.Telegram.Objects.Bot.TelegramBot">
+            <summary>
+                Telegram Bot class used in PoliNetwork projects
+            </summary>
+        </member>
+        <member name="M:PoliNetwork.Telegram.Objects.Bot.TelegramBot.#ctor(System.String)">
+            <summary>
+                Constructor. Generate the bot by token
+            </summary>
+            <param name="token">token for the bot</param>
+        </member>
+        <member name="M:PoliNetwork.Telegram.Objects.Bot.TelegramBot.Start(System.Func{Telegram.Bot.ITelegramBotClient,Telegram.Bot.Types.Update,System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+            <summary>
+                Start receiving and handling updates
+            </summary>
+            <param name="handleUpdateAsync">Method to handle updates</param>
+        </member>
+        <member name="M:PoliNetwork.Telegram.Objects.Bot.TelegramBot.GetUserString">
+            <summary>
+                Get this bot user string info
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PoliNetwork.Telegram.Objects.Bot.TelegramBot.HandlePollingErrorAsync(Telegram.Bot.ITelegramBotClient,System.Exception,System.Threading.CancellationToken)">
+            <summary>
+                What will happen in case of telegram errors
+            </summary>
+            <param name="botClient">botClient</param>
+            <param name="exception">exception</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">exception</exception>
+        </member>
+        <member name="M:PoliNetwork.Telegram.Objects.Bot.TelegramBot.GetId">
+            <summary>
+                Get bot telegram id
+            </summary>
+            <returns>Bot telegram id</returns>
+        </member>
+        <member name="T:PoliNetwork.Telegram.Objects.Bot.TestBot">
+            <summary>
+                Telegram Bot Test class used in PoliNetwork projects
+            </summary>
+        </member>
+        <member name="M:PoliNetwork.Telegram.Objects.Bot.TestBot.Start(System.Func{Telegram.Bot.ITelegramBotClient,Telegram.Bot.Types.Update,System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+            <summary>
+                Start receiving and handling updates (dummy)
+            </summary>
+            <param name="handleUpdateAsync"></param>
+        </member>
+    </members>
+</doc>
