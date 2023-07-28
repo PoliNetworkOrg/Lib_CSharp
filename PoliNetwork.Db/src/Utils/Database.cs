@@ -19,7 +19,7 @@ public static class Database
     /// <param name="dbConfig">DBMS Config</param>
     /// <param name="args">Query Args</param>
     /// <returns></returns>
-    public static int Execute(string query, DbConfig dbConfig, Dictionary<string, object?>? args = null)
+    public static int Execute(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
     {
         var connection = new MySqlConnection(DbConfigUtils.GetConnectionString(dbConfig));
 
@@ -52,7 +52,7 @@ public static class Database
     /// <param name="dbConfig"> DBMS Config</param>
     /// <param name="args"> Query Args</param>
     /// <returns></returns>
-    public static DataTable? ExecuteSelect(string query, DbConfig dbConfig, Dictionary<string, object?>? args = null)
+    public static DataTable? ExecuteSelect(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
     {
         var connection = new MySqlConnection(DbConfigUtils.GetConnectionString(dbConfig));
 

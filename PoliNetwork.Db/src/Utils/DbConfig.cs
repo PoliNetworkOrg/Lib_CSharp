@@ -15,8 +15,11 @@ public static class DbConfigUtils
     /// </summary>
     /// <param name="config"></param>
     /// <returns></returns>
-    public static string GetConnectionString(DbConfig config)
+    public static string GetConnectionString(DbConfig? config)
     {
+        if (config == null)
+            return string.Empty;
+
         return string.IsNullOrEmpty(config.Password)
             ? "server='" + config.Host + "';user='" + config.User + "';database='" + config.DatabaseName + "';port=" +
               config.Port
