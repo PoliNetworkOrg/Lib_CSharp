@@ -34,7 +34,7 @@ public static class Database
                 query = query.Replace(key, value?.ToString() ?? "NULL");
             }
 
-        dbConfig.Logger.DbQuery(query);
+        dbConfig?.Logger.DbQuery(query);
 
         OpenConnection(connection);
 
