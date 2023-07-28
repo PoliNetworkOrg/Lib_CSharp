@@ -32,7 +32,7 @@ public class TestBot : ITelegramBotWrapper
             Text = text,
             MessageId = 1
         };
-        return Task.FromResult(message);
+        return Task.FromResult((Message?)message);
     }
 
     public Logger GetLogger()
