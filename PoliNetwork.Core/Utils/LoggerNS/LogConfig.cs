@@ -11,13 +11,13 @@ public class LogConfig
         if (string.IsNullOrEmpty(logFilePath))
             return;
 
-        this.Level = logLevel;
-        this._isWriteToFileEnabled = isWriteToFileEnabled;
+        Level = logLevel;
+        _isWriteToFileEnabled = isWriteToFileEnabled;
         LogFilePath = Path.Join(logFilePath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"), ".log");
     }
 
     public bool CanWriteToFile()
     {
-        return _isWriteToFileEnabled && !string.IsNullOrEmpty(this.LogFilePath);
+        return _isWriteToFileEnabled && !string.IsNullOrEmpty(LogFilePath);
     }
 }

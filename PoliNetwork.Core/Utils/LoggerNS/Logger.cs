@@ -10,13 +10,13 @@ public class Logger
     /// <param name="logConfig">config for the logger</param>
     public Logger(LogConfig? logConfig = null)
     {
-        this._logConfig = logConfig ?? new LogConfig();
+        _logConfig = logConfig ?? new LogConfig();
     }
 
     private void WriteToFile(string message)
     {
-        if (!this._logConfig.CanWriteToFile()) return;
-        using var writer = new StreamWriter(this._logConfig.LogFilePath, true);
+        if (!_logConfig.CanWriteToFile()) return;
+        using var writer = new StreamWriter(_logConfig.LogFilePath, true);
         writer.WriteLine(message);
     }
 
@@ -35,7 +35,7 @@ public class Logger
 
     private void Write(LogLevel level, string message)
     {
-        if (level < this._logConfig.Level) return;
+        if (level < _logConfig.Level) return;
 
         var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
         var messageWithTimestamp = $"{timestamp} [{level}] \t{message}";
