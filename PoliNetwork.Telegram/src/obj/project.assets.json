@@ -473,8 +473,8 @@
     },
     "PoliNetwork.Core/0.0.1": {
       "type": "project",
-      "path": "../PoliNetwork.Core/PoliNetwork.Core.csproj",
-      "msbuildProject": "../PoliNetwork.Core/PoliNetwork.Core.csproj"
+      "path": "../../PoliNetwork.Core/src/PoliNetwork.Core.csproj",
+      "msbuildProject": "../../PoliNetwork.Core/src/PoliNetwork.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -490,11 +490,11 @@
   "project": {
     "version": "0.0.1",
     "restore": {
-      "projectUniqueName": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/PoliNetwork.Telegram.csproj",
+      "projectUniqueName": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/src/PoliNetwork.Telegram.csproj",
       "projectName": "PoliNetwork.Telegram",
-      "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/PoliNetwork.Telegram.csproj",
+      "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/src/PoliNetwork.Telegram.csproj",
       "packagesPath": "/home/user/.nuget/packages/",
-      "outputPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/obj/",
+      "outputPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/user/.nuget/NuGet/NuGet.Config"
@@ -509,8 +509,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/PoliNetwork.Core.csproj": {
-              "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/PoliNetwork.Core.csproj"
+            "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj": {
+              "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj"
             }
           }
         }

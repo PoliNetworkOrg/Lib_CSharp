@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4npsQ0KUhCukC9KS6JMz+/r4R9KKlgSdAFA/mCUleUOgGiR6lfK5P2tPbkH/Oy8NpTLS36IC3L0H497SHo0y/w==",
+  "dgSpecHash": "2Czm1AS8u3fAXzkMXZPlOk0L7MKUZXQ6uSjN7f8jpGmW/NZRGpUluo/ZHP8tzoSv97nvkiBpeyfcgEovS3uUJg==",
   "success": true,
-  "projectFilePath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/PoliNetwork.Telegram.csproj",
+  "projectFilePath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Telegram/src/PoliNetwork.Telegram.csproj",
   "expectedPackageFiles": [
     "/home/user/.nuget/packages/dotnet.reproduciblebuilds/1.1.1/dotnet.reproduciblebuilds.1.1.1.nupkg.sha512",
     "/home/user/.nuget/packages/microsoft.build.tasks.git/1.1.1/microsoft.build.tasks.git.1.1.1.nupkg.sha512",

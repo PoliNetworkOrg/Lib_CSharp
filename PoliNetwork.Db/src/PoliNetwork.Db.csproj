@@ -48,6 +48,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\PoliNetwork.Core\PoliNetwork.Core.csproj" />
+        <ProjectReference Include="..\..\PoliNetwork.Core\src\PoliNetwork.Core.csproj" />
     </ItemGroup>
 </Project>

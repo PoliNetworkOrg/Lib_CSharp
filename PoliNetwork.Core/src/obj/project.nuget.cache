@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uH9GeO4b0p1NmXnTPcP+RLJujFqiMIWn/ego+3jaj4VCDMKLgeGGjkIJXbrLFNQ/cE7tdjth3rsQa2YtuOj/Bw==",
+  "dgSpecHash": "HqF7pijKW7c5rwA0aDOsvO6aJqXo1NSLjEtMZaBtYvdqIhVFFUarW27TB0G9F23VdX3pB8qjBiKzhiRdnBH+vw==",
   "success": true,
-  "projectFilePath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/PoliNetwork.Core.csproj",
+  "projectFilePath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj",
   "expectedPackageFiles": [
     "/home/user/.nuget/packages/dotnet.reproduciblebuilds/1.1.1/dotnet.reproduciblebuilds.1.1.1.nupkg.sha512",
     "/home/user/.nuget/packages/microsoft.build.tasks.git/1.1.1/microsoft.build.tasks.git.1.1.1.nupkg.sha512",

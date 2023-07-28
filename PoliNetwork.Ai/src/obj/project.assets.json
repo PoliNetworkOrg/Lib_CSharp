@@ -318,6 +318,16 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "PoliNetwork.Core/0.0.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PoliNetwork.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PoliNetwork.Core.dll": {}
+        }
       }
     }
   },
@@ -809,11 +819,17 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "PoliNetwork.Core/0.0.1": {
+      "type": "project",
+      "path": "../../PoliNetwork.Core/src/PoliNetwork.Core.csproj",
+      "msbuildProject": "../../PoliNetwork.Core/src/PoliNetwork.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "BingChat >= 0.8.0"
+      "BingChat >= 0.8.0",
+      "PoliNetwork.Core >= 0.0.1"
     ]
   },
   "packageFolders": {
@@ -840,7 +856,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj": {
+              "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj"
+            }
+          }
         }
       }
     },

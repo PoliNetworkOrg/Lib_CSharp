@@ -4,17 +4,15 @@
         <name>PoliNetwork.Core</name>
     </assembly>
     <members>
-        <member name="M:PoliNetwork.Core.Utils.LoggerNS.Logger.#ctor(PoliNetwork.Core.Utils.LoggerNS.LogLevel,System.String,System.Boolean)">
+        <member name="M:PoliNetwork.Core.Utils.LoggerNS.Logger.#ctor(PoliNetwork.Core.Utils.LoggerNS.LogConfig)">
             <summary>
                 Instantiate a logger object
             </summary>
-            <param name="level">the level of the logger (default: Warning)</param>
-            <param name="logFolderPath">the folder where the logs are going to be written into</param>
-            <param name="isWriteToFileEnabled">if the log are going to be written into files</param>
+            <param name="logConfig">config for the logger</param>
         </member>
-        <member name="M:PoliNetwork.Core.Utils.Wait.WaitForeverConsoleReadline">
+        <member name="M:PoliNetwork.Core.Utils.Wait.WaitForever">
             <summary>
-                Wait forever with "Console.Readline()"
+                Wait forever
             </summary>
         </member>
     </members>

@@ -2136,8 +2136,8 @@
     },
     "PoliNetwork.Core/0.0.1": {
       "type": "project",
-      "path": "../PoliNetwork.Core/PoliNetwork.Core.csproj",
-      "msbuildProject": "../PoliNetwork.Core/PoliNetwork.Core.csproj"
+      "path": "../../PoliNetwork.Core/src/PoliNetwork.Core.csproj",
+      "msbuildProject": "../../PoliNetwork.Core/src/PoliNetwork.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2154,11 +2154,11 @@
   "project": {
     "version": "0.0.1",
     "restore": {
-      "projectUniqueName": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Db/PoliNetwork.Db.csproj",
+      "projectUniqueName": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Db/src/PoliNetwork.Db.csproj",
       "projectName": "PoliNetwork.Db",
-      "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Db/PoliNetwork.Db.csproj",
+      "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Db/src/PoliNetwork.Db.csproj",
       "packagesPath": "/home/user/.nuget/packages/",
-      "outputPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Db/obj/",
+      "outputPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Db/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/user/.nuget/NuGet/NuGet.Config"
@@ -2173,8 +2173,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/PoliNetwork.Core.csproj": {
-              "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/PoliNetwork.Core.csproj"
+            "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj": {
+              "projectPath": "/home/user/git/PoliNetwork/Lib_CSharp/PoliNetwork.Core/src/PoliNetwork.Core.csproj"
             }
           }
         }

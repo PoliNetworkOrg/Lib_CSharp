@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "PoliNetwork.Ai/0.0.1": {
         "dependencies": {
-          "BingChat": "0.8.0"
+          "BingChat": "0.8.0",
+          "PoliNetwork.Core": "0.0.1"
         },
         "runtime": {
           "PoliNetwork.Ai.dll": {}
@@ -208,7 +209,12 @@
           }
         }
       },
-      "System.Threading.Channels/7.0.0": {}
+      "System.Threading.Channels/7.0.0": {},
+      "PoliNetwork.Core/0.0.1": {
+        "runtime": {
+          "PoliNetwork.Core.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -349,6 +355,11 @@
       "sha512": "sha512-qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
       "path": "system.threading.channels/7.0.0",
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
+    },
+    "PoliNetwork.Core/0.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
