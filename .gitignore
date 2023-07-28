@@ -38,3 +38,11 @@ PoliNetwork.Db/src/obj/
 PoliNetwork.Telegram/src/bin/
 
 PoliNetwork.Telegram/src/obj/
+
+PoliNetwork.Ai.Test/obj/
+
+PoliNetwork.Core.Test/obj/
+
+PoliNetwork.Db.Test/obj/
+
+PoliNetwork.Telegram.Test/obj/
