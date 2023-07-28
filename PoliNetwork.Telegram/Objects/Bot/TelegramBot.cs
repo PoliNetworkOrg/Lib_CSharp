@@ -20,10 +20,11 @@ public class TelegramBot : ITelegramBotWrapper
     ///     Constructor. Generate the bot by token
     /// </summary>
     /// <param name="token">token for the bot</param>
-    public TelegramBot(string token)
+    /// <param name="logConfig">configuration for logger</param>
+    public TelegramBot(string token, LogConfig? logConfig = null)
     {
         _telegramBotClient = new TelegramBotClient(token);
-        _logger = new Logger();
+        _logger = new Logger(logConfig);
         _user = _telegramBotClient.GetMeAsync().Result;
         _logger.Info($"Generated bot. {GetUserString()}");
     }
