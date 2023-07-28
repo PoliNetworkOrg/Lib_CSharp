@@ -2,7 +2,7 @@ namespace PoliNetwork.Core.Utils.LoggerNS;
 
 public class Logger
 {
-    private readonly LogConfig _logConfig;
+    private LogConfig _logConfig;
 
     /// <summary>
     ///     Instantiate a logger object
@@ -75,5 +75,11 @@ public class Logger
     public void DbQuery(string message)
     {
         Write(LogLevel.DBQUERY, message);
+    }
+
+
+    public void SetLogConfing(LogConfig logConfig)
+    {
+        this._logConfig = logConfig;
     }
 }
