@@ -29,12 +29,12 @@
 
     <ItemGroup>
 
-        <PackageReference Include="BingChat" Version="0.8.0" />
+        <PackageReference Include="BingChat" Version="0.8.0"/>
 
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\PoliNetwork.Core\src\PoliNetwork.Core.csproj" />
+        <ProjectReference Include="..\..\PoliNetwork.Core\src\PoliNetwork.Core.csproj"/>
     </ItemGroup>
 
 </Project>

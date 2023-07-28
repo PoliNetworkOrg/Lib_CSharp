@@ -11,9 +11,9 @@ namespace PoliNetwork.Db.Utils;
 public static class Database
 {
     // ReSharper disable once UnusedMember.Global
-    
+
     /// <summary>
-    /// Execute a query and return the number of rows affected
+    ///     Execute a query and return the number of rows affected
     /// </summary>
     /// <param name="query">SQL Query</param>
     /// <param name="dbConfig">DBMS Config</param>
@@ -46,7 +46,7 @@ public static class Database
     }
 
     /// <summary>
-    /// Execute a select query and return the result as a DataTable
+    ///     Execute a select query and return the result as a DataTable
     /// </summary>
     /// <param name="query"> SQL Query</param>
     /// <param name="dbConfig"> DBMS Config</param>

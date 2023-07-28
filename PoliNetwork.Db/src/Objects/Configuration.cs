@@ -4,7 +4,6 @@ using PoliNetwork.Core.Utils.LoggerNS;
 
 namespace PoliNetwork.Db.Objects;
 
-
 [Serializable]
 [JsonObject(MemberSerialization.Fields)]
 public class DbConfig

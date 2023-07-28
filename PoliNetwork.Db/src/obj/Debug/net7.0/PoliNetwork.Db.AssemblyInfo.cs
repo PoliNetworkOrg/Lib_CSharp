@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("PoliNetwork")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Db C# library of PoliNetwork")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.1+757c0b39b2d5340ab3cf3e09f00f5eabfe3fe0af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("PoliNetwork.Db")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PoliNetwork.Db")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.0.1")]
