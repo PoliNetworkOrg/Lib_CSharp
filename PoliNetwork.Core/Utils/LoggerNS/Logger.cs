@@ -80,6 +80,6 @@ public class Logger
 
     public void SetLogConfing(LogConfig logConfig)
     {
-        this._logConfig = logConfig;
+        _logConfig = logConfig;
     }
 }
