@@ -4,6 +4,27 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
+        <WarningsAsErrors>1591</WarningsAsErrors>
+        <Version>0.0.1</Version>
+        <Title>PoliNetwork.Ai</Title>
+        <Authors>PoliNetwork</Authors>
+        <PackageProjectUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/PoliNetworkOrg/Lib_CSharp</RepositoryUrl>
+        <LangVersion>11</LangVersion>
+        <Description>Ai C# library of PoliNetwork</Description>
+        <Copyright>PoliNetwork</Copyright>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageTags>polinetwork, library, ai</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>library</RepositoryType>
+        <AssemblyVersion>0.0.1</AssemblyVersion>
+        <FileVersion>0.0.1</FileVersion>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <EnablePackageValidation>true</EnablePackageValidation>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
 </Project>
