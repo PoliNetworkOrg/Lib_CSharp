@@ -1,45 +1,59 @@
 #region
 
 using Newtonsoft.Json;
+using PoliNetwork.Core.Data;
 using PoliNetwork.Core.Utils.LoggerNS;
+using PoliNetwork.Db.Objects;
 
 #endregion
 
 namespace PoliNetwork.Db.Utils;
-
-[Serializable]
-[JsonObject(MemberSerialization.Fields)]
-public class DbConfig
+public static class DbConfigUtils
 {
-    public string? Database;
-    public string? DatabaseName;
-    public string? Host;
-    public Logger Logger;
-    public string? Password;
-    public int Port;
-    public string? User;
-
-    public DbConfig(Logger logger)
+    
+    /// <summary>
+    /// Gets the connection string from a DbConfig object.
+    /// </summary>
+    /// <param name="config"></param>
+    /// <returns></returns>
+    public static string GetConnectionString(DbConfig config)
     {
-        Logger = logger;
+        return string.IsNullOrEmpty(config.Password)
+            ? "server='" + config.Host + "';user='" + config.User + "';database='" + config.DatabaseName + "';port=" + config.Port
+            : "server='" + config.Host + "';user='" + config.User + "';database='" + config.DatabaseName + "';port=" + config.Port + ";password='" +
+              config.Password + "'";
     }
-
-
-    public void FixName()
+    
+    /// <summary>
+    /// Creates a new config file if it does not exist, otherwise it loads it.
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    public static DbConfig? LoadOrInitializeConfig(string path)
     {
-        if (string.IsNullOrEmpty(DatabaseName))
-            DatabaseName = Database;
+        if (!File.Exists(path))
+        {
+            try
+            {
+                var config = JsonConvert.SerializeObject(new DbConfig(null));
+                File.WriteAllText(path, config);
+            }
+            catch (Exception e)
+            {
+                GlobalVariables.DefaultLogger.Error(e);
+                throw;
+            }
 
-        if (string.IsNullOrEmpty(Database))
-            Database = DatabaseName;
-    }
+            return null;
+        }
 
+        var json = File.ReadAllText(path);
+        var config2 = JsonConvert.DeserializeObject<DbConfig>(json);
+        if (config2 == null)
+        {
+            GlobalVariables.DefaultLogger.Emergency("Config file could not be deserialized.");
+        }
 
-    public string GetConnectionString()
-    {
-        return string.IsNullOrEmpty(Password)
-            ? "server='" + Host + "';user='" + User + "';database='" + DatabaseName + "';port=" + Port
-            : "server='" + Host + "';user='" + User + "';database='" + DatabaseName + "';port=" + Port + ";password='" +
-              Password + "'";
+        return config2;
     }
 }

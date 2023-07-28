@@ -3,11 +3,10 @@ namespace PoliNetwork.Core.Utils;
 public static class Wait
 {
     /// <summary>
-    ///     Wait forever with "Console.Readline()"
+    ///     Wait forever
     /// </summary>
-    public static void WaitForeverConsoleReadline()
+    public static void WaitForever()
     {
-        while (true) Console.ReadLine();
-        // ReSharper disable once FunctionNeverReturns
+        Thread.Sleep(Timeout.Infinite);
     }
 }

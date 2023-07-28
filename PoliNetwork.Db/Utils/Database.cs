@@ -11,11 +11,17 @@ namespace PoliNetwork.Db.Utils;
 public static class Database
 {
     // ReSharper disable once UnusedMember.Global
-    public static int Execute(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
+    
+    /// <summary>
+    /// Execute a query and return the number of rows affected
+    /// </summary>
+    /// <param name="query">SQL Query</param>
+    /// <param name="dbConfig">DBMS Config</param>
+    /// <param name="args">Query Args</param>
+    /// <returns></returns>
+    public static int Execute(string query, DbConfig dbConfig, Dictionary<string, object?>? args = null)
     {
-        if (dbConfig == null) return default;
-
-        var connection = new MySqlConnection(dbConfig.GetConnectionString());
+        var connection = new MySqlConnection(DbConfigUtils.GetConnectionString(dbConfig));
 
         LoggerDb.Logger?.Invoke(new QueryArgs { Query = query, Args = args });
 
@@ -39,9 +45,16 @@ public static class Database
         return numberOfRowsAffected ?? -1;
     }
 
-    public static DataTable? ExecuteSelect(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
+    /// <summary>
+    /// Execute a select query and return the result as a DataTable
+    /// </summary>
+    /// <param name="query"> SQL Query</param>
+    /// <param name="dbConfig"> DBMS Config</param>
+    /// <param name="args"> Query Args</param>
+    /// <returns></returns>
+    public static DataTable? ExecuteSelect(string query, DbConfig dbConfig, Dictionary<string, object?>? args = null)
     {
-        var connection = new MySqlConnection(dbConfig?.GetConnectionString());
+        var connection = new MySqlConnection(DbConfigUtils.GetConnectionString(dbConfig));
 
         LoggerDb.Logger?.Invoke(new QueryArgs { Query = query, Args = args });
 
@@ -57,14 +70,6 @@ public static class Database
         {
             SelectCommand = cmd
         };
-
-        if (dbConfig != null)
-        {
-            if (args != null)
-                foreach (var (key, value) in args)
-                    query = query.Replace(key, value?.ToString() ?? "NULL");
-            dbConfig.Logger.DbQuery(query);
-        }
 
         if (connection.State != ConnectionState.Open)
             return default;
