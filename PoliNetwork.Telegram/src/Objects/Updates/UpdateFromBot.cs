@@ -8,6 +8,9 @@ public class UpdateFromBot : IUpdate
 
     public UpdateFromBot(Update update)
     {
-        this._update = update;
+        _update = update;
+        Message = new MessageFromBot(update.Message);
     }
+
+    public IMessage Message { get; set; }
 }

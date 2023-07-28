@@ -1,4 +1,5 @@
 using PoliNetwork.Telegram.Objects.Bot;
+using PoliNetwork.Telegram.Objects.Updates;
 
 namespace PoliNetwork.Telegram.Utils;
 
@@ -10,18 +11,21 @@ public static class Echo
     /// <param name="message">the message we need to echo to</param>
     /// <param name="telegramBotClient">bot</param>
     /// <param name="cancellationToken">cancellationToken</param>
-    public static async Task EchoMethod(Message message, ITelegramBotWrapper telegramBotClient,
+    public static async Task EchoMethod(IMessage message, ITelegramBotWrapper telegramBotClient,
         CancellationToken cancellationToken)
     {
         // Only process text messages
-        if (message.Text is not { } messageText)
+        var messageText = message.Text;
+        if (string.IsNullOrEmpty(messageText))
             return;
 
         var chatId = message.Chat.Id;
 
         // Echo received message text
+        if (chatId == null) return;
+
         var sentMessage = await telegramBotClient.SendTextMessageAsync(
-            chatId,
+            chatId.Value,
             "You said:\n" + messageText,
             cancellationToken);
 

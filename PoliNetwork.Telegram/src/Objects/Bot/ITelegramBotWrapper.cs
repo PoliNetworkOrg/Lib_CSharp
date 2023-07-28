@@ -1,5 +1,4 @@
 using PoliNetwork.Core.Utils.LoggerNS;
-using Telegram.Bot;
 using Telegram.Bot.Types;
 
 namespace PoliNetwork.Telegram.Objects.Bot;

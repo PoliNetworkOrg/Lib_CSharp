@@ -7,13 +7,13 @@ public class UpdateMethod
 {
     private readonly Action<CancellationToken, IUpdate> _action;
 
-    public UpdateMethod(Action<CancellationToken, IUpdate>  action)
+    public UpdateMethod(Action<CancellationToken, IUpdate> action)
     {
-        this._action = action;
+        _action = action;
     }
 
     public void Run(Update bUpdate, CancellationToken cancellationToken)
     {
-        this._action.Invoke(cancellationToken, new UpdateFromBot(bUpdate));
+        _action.Invoke(cancellationToken, new UpdateFromBot(bUpdate));
     }
 }

@@ -15,8 +15,8 @@ public class TelegramBot : ITelegramBotWrapper
 {
     private readonly Logger _logger; //logger
     private readonly TelegramBotClient _telegramBotClient; //telegram bot client
-    private readonly User _user; //user object representing the bot
     private readonly UpdateMethod _updateMethod;
+    private readonly User _user; //user object representing the bot
 
     /// <summary>
     ///     Constructor. Generate the bot by token
@@ -26,7 +26,7 @@ public class TelegramBot : ITelegramBotWrapper
     /// <param name="logConfig">configuration for logger</param>
     public TelegramBot(TelegramConfig config, UpdateMethod updateMethod, LogConfig? logConfig = null)
     {
-        this._updateMethod = updateMethod;
+        _updateMethod = updateMethod;
         _telegramBotClient =
             new TelegramBotClient(new TelegramBotClientOptions(config.Token, config.BaseUrl,
                 config.UseTestEnvironment));
@@ -46,20 +46,14 @@ public class TelegramBot : ITelegramBotWrapper
         {
             AllowedUpdates = Array.Empty<UpdateType>() // receive all update types except ChatMember related updates
         };
-        
+
         _telegramBotClient.StartReceiving(
             HandleUpdateAsync,
             HandlePollingErrorAsync,
-            receiverOptions, 
-            cancellationToken: cancellationToken);
+            receiverOptions,
+            cancellationToken);
 
         _logger.Info($"Starting receiving messages. {GetUserString()}");
-    }
-    
-    Task HandleUpdateAsync(ITelegramBotClient aTelegramBotClient, Update bUpdate, CancellationToken cancellationToken)
-    {
-        this._updateMethod.Run(bUpdate, cancellationToken);
-        return Task.CompletedTask;
     }
 
     /// <summary>
@@ -81,6 +75,13 @@ public class TelegramBot : ITelegramBotWrapper
     public Logger GetLogger()
     {
         return _logger;
+    }
+
+    private Task HandleUpdateAsync(ITelegramBotClient aTelegramBotClient, Update bUpdate,
+        CancellationToken cancellationToken)
+    {
+        _updateMethod.Run(bUpdate, cancellationToken);
+        return Task.CompletedTask;
     }
 
     /// <summary>
