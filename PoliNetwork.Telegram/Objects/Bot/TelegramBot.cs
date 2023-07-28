@@ -23,7 +23,7 @@ public class TelegramBot : ITelegramBotWrapper
     public TelegramBot(string token)
     {
         this._telegramBotClient = new TelegramBotClient(token);
-        this._logger = new Logger(null, null);
+        this._logger = new Logger();
         this._user = this._telegramBotClient.GetMeAsync().Result;
         this._logger.Info($"Generated bot. {GetUserString()}");
     }

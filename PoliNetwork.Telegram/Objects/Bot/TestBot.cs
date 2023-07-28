@@ -13,7 +13,7 @@ public class TestBot : ITelegramBotWrapper
     
     public TestBot()
     {
-        this._logger = new Logger(null, null);
+        this._logger = new Logger();
     }
     
     /// <summary>
@@ -26,7 +26,7 @@ public class TestBot : ITelegramBotWrapper
 
     public Task<Message?> SendTextMessageAsync(long chatId, string text, CancellationToken cancellationToken)
     {
-        var message = new Message()
+        var message = new Message
         {
             From = new User(),
             Text = text,

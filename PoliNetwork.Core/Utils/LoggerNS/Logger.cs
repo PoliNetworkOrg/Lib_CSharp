@@ -6,14 +6,20 @@ public class Logger
     private readonly LogLevel _level;
     private readonly string _logFilePath = "";
 
-    public Logger(LogLevel? level, string? logFolderPath)
+    /// <summary>
+    /// Instantiate a logger object
+    /// </summary>
+    /// <param name="level">the level of the logger (default: Warning)</param>
+    /// <param name="logFolderPath">the folder where the logs are going to be written into</param>
+    /// <param name="isWriteToFileEnabled">if the log are going to be written into files</param>
+    public Logger(LogLevel level = LogLevel.WARNING, string? logFolderPath = null, bool isWriteToFileEnabled = true)
     {
-        _level = level ?? LogLevel.WARNING;
+        _level = level;
 
         if (string.IsNullOrEmpty(_logFilePath))
             return;
 
-        _isWriteToFileEnabled = true;
+        this._isWriteToFileEnabled = isWriteToFileEnabled;
         _logFilePath = Path.Join(logFolderPath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"), ".log");
     }
 
