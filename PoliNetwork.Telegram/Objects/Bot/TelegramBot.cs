@@ -13,7 +13,7 @@ namespace PoliNetwork.Telegram.Objects.Bot;
 public class TelegramBot : ITelegramBotWrapper
 {
     private readonly Logger _logger; //logger
-    private readonly TelegramBotClient? _telegramBotClient; //telegram bot client
+    private readonly TelegramBotClient _telegramBotClient; //telegram bot client
     private readonly User _user; //user object representing the bot
 
     /// <summary>
@@ -40,7 +40,7 @@ public class TelegramBot : ITelegramBotWrapper
             AllowedUpdates = Array.Empty<UpdateType>() // receive all update types except ChatMember related updates
         };
 
-        _telegramBotClient?.StartReceiving(
+        _telegramBotClient.StartReceiving(
             handleUpdateAsync,
             HandlePollingErrorAsync,
             receiverOptions
@@ -51,9 +51,6 @@ public class TelegramBot : ITelegramBotWrapper
 
     public async Task<Message?> SendTextMessageAsync(long chatId, string text, CancellationToken cancellationToken)
     {
-        if (_telegramBotClient == null)
-            return null;
-
         return await _telegramBotClient.SendTextMessageAsync(chatId, text, cancellationToken: cancellationToken);
     }
 
