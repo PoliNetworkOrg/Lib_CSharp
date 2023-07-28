@@ -10,4 +10,5 @@ public class TelegramConfig
     public string? BaseUrl { get; set; }
 
     public bool UseTestEnvironment { get; set; } = false;
+    public UpdateMethod? UpdateMethod { get; set; }
 }

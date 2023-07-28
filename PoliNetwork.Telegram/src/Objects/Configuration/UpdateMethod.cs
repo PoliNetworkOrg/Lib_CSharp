@@ -1,11 +1,11 @@
 #region
 
-using PoliNetwork.Telegram.Objects.Updates;
+using PoliNetwork.Telegram.Objects.Updates.Update;
 using Telegram.Bot.Types;
 
 #endregion
 
-namespace PoliNetwork.Telegram.Objects;
+namespace PoliNetwork.Telegram.Objects.Configuration;
 
 public class UpdateMethod
 {

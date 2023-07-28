@@ -1,14 +1,14 @@
 #region
 
-using Telegram.Bot.Types;
+using PoliNetwork.Telegram.Objects.Updates.Chat;
 
 #endregion
 
-namespace PoliNetwork.Telegram.Objects.Updates;
+namespace PoliNetwork.Telegram.Objects.Updates.Message;
 
 public class MessageFromBot : IMessage
 {
-    public MessageFromBot(Message? updateMessage)
+    public MessageFromBot(global::Telegram.Bot.Types.Message? updateMessage)
     {
         Text = updateMessage?.Text;
         Chat = new ChatFromBot(updateMessage?.Chat);

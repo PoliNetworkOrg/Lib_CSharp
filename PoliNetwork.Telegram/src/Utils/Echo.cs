@@ -1,7 +1,7 @@
 #region
 
 using PoliNetwork.Telegram.Objects.Bot;
-using PoliNetwork.Telegram.Objects.Updates;
+using PoliNetwork.Telegram.Objects.Updates.Message;
 
 #endregion
 

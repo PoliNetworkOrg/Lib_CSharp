@@ -17,20 +17,19 @@ namespace PoliNetwork.Telegram.Objects.Bot;
 /// </summary>
 public class TelegramBot : ITelegramBotWrapper
 {
+    private readonly TelegramConfig _config;
     private readonly Logger _logger; //logger
     private readonly TelegramBotClient _telegramBotClient; //telegram bot client
-    private readonly UpdateMethod _updateMethod;
     private readonly User _user; //user object representing the bot
 
     /// <summary>
     ///     Constructor. Generate the bot by token
     /// </summary>
     /// <param name="config">TelegramConfig object containing Database Config and </param>
-    /// <param name="updateMethod">updateMethod</param>
     /// <param name="logConfig">configuration for logger</param>
-    public TelegramBot(TelegramConfig config, UpdateMethod updateMethod, LogConfig? logConfig = null)
+    public TelegramBot(TelegramConfig config, LogConfig? logConfig = null)
     {
-        _updateMethod = updateMethod;
+        _config = config;
         _telegramBotClient =
             new TelegramBotClient(new TelegramBotClientOptions(config.Token, config.BaseUrl,
                 config.UseTestEnvironment));
@@ -84,7 +83,7 @@ public class TelegramBot : ITelegramBotWrapper
     private Task HandleUpdateAsync(ITelegramBotClient aTelegramBotClient, Update bUpdate,
         CancellationToken cancellationToken)
     {
-        _updateMethod.Run(bUpdate, cancellationToken);
+        _config.UpdateMethod?.Run(bUpdate, cancellationToken);
         return Task.CompletedTask;
     }
 
