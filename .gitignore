@@ -46,3 +46,21 @@ PoliNetwork.Core.Test/obj/
 PoliNetwork.Db.Test/obj/
 
 PoliNetwork.Telegram.Test/obj/
+
+PoliNetwork.Ai/Test/bin/
+
+PoliNetwork.Ai/Test/obj/
+
+PoliNetwork.Ai/src/obj/
+
+PoliNetwork.Core/Test/bin/
+
+PoliNetwork.Core/Test/obj/
+
+PoliNetwork.Db/Test/bin/
+
+PoliNetwork.Db/Test/obj/
+
+PoliNetwork.Telegram/Test/bin/
+
+PoliNetwork.Telegram/Test/obj/
