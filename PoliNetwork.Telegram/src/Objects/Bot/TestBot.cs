@@ -33,7 +33,7 @@ public class TestBot : ITelegramBotWrapper
     /// <param name="text">text</param>
     /// <param name="cancellationToken">cancellationToken</param>
     /// <returns></returns>
-    public Task<Message?> SendTextMessageAsync(long chatId, string text, CancellationToken cancellationToken)
+    public Message SendTextMessage(long chatId, string text, CancellationToken cancellationToken)
     {
         var message = new Message
         {
@@ -41,7 +41,7 @@ public class TestBot : ITelegramBotWrapper
             Text = text,
             MessageId = 1
         };
-        return Task.FromResult((Message?)message);
+        return message;
     }
 
     /// <summary>
@@ -51,5 +51,9 @@ public class TestBot : ITelegramBotWrapper
     public Logger GetLogger()
     {
         return _logger;
+    }
+
+    public void BanUser(long chatId, long userId, DateTime? untilDate)
+    {
     }
 }

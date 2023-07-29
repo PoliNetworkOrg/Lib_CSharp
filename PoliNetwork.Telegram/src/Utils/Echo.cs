@@ -15,7 +15,7 @@ public static class Echo
     /// <param name="message">the message we need to echo to</param>
     /// <param name="telegramBotClient">bot</param>
     /// <param name="cancellationToken">cancellationToken</param>
-    public static async Task EchoMethod(IMessage message, ITelegramBotWrapper telegramBotClient,
+    public static void EchoMethod(IMessage message, ITelegramBotWrapper telegramBotClient,
         CancellationToken cancellationToken)
     {
         // Only process text messages
@@ -29,12 +29,12 @@ public static class Echo
         // Echo received message text
         if (chatId == null) return;
 
-        var sentMessage = await telegramBotClient.SendTextMessageAsync(
+        var sentMessage = telegramBotClient.SendTextMessage(
             chatId.Value,
             "You said:\n" + messageText,
             cancellationToken);
 
         telegramBotClient.GetLogger().Info(
-            $"Received a '{messageText}' message in chat {chatId}. Sent {sentMessage?.MessageId} as id of the reply");
+            $"Received a '{messageText}' message in chat {chatId}. Sent {sentMessage.MessageId} as id of the reply");
     }
 }

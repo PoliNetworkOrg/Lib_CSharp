@@ -59,6 +59,7 @@ public class TelegramBot : ITelegramBotWrapper
         _logger.Info($"Starting receiving messages. {GetUserString()}");
     }
 
+
     /// <summary>
     ///     Send a text message
     /// </summary>
@@ -66,9 +67,9 @@ public class TelegramBot : ITelegramBotWrapper
     /// <param name="text">text</param>
     /// <param name="cancellationToken">cancellationToken</param>
     /// <returns></returns>
-    public async Task<Message?> SendTextMessageAsync(long chatId, string text, CancellationToken cancellationToken)
+    public Message SendTextMessage(long chatId, string text, CancellationToken cancellationToken)
     {
-        return await _telegramBotClient.SendTextMessageAsync(chatId, text, cancellationToken: cancellationToken);
+        return _telegramBotClient.SendTextMessageAsync(chatId, text, cancellationToken: cancellationToken).Result;
     }
 
     /// <summary>
@@ -78,6 +79,18 @@ public class TelegramBot : ITelegramBotWrapper
     public Logger GetLogger()
     {
         return _logger;
+    }
+
+    /// <summary>
+    ///     Ban user
+    /// </summary>
+    /// <param name="chatId">chatId</param>
+    /// <param name="userId">userId</param>
+    /// <param name="untilDate">untilDate</param>
+    /// <returns></returns>
+    public void BanUser(long chatId, long userId, DateTime? untilDate)
+    {
+        _telegramBotClient.BanChatMemberAsync(chatId, userId, untilDate).Wait();
     }
 
     private Task HandleUpdateAsync(ITelegramBotClient aTelegramBotClient, Update bUpdate,
