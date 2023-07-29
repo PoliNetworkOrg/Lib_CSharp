@@ -8,13 +8,12 @@ namespace PoliNetwork.Telegram.Objects.Updates.Update;
 
 public class UpdateFromBot : IUpdate
 {
-    private global::Telegram.Bot.Types.Update _update;
+    private readonly global::Telegram.Bot.Types.Update _update;
 
     public UpdateFromBot(global::Telegram.Bot.Types.Update update)
     {
         _update = update;
-        Message = new MessageFromBot(update.Message);
     }
 
-    public IMessage Message { get; set; }
+    public IMessage Message => new MessageFromBot(_update.Message);
 }

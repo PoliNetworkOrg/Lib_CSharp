@@ -8,5 +8,5 @@ namespace PoliNetwork.Telegram.Objects.Updates.Update;
 
 public interface IUpdate
 {
-    IMessage Message { get; set; }
+    IMessage Message { get; }
 }

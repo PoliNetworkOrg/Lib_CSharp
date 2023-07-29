@@ -9,7 +9,7 @@ namespace PoliNetwork.Telegram.Objects.Updates.Message;
 
 public interface IMessage
 {
-    string? Text { get; set; }
-    IChat Chat { get; set; }
-    IUser From { get; set; }
+    string? Text { get; }
+    IChat Chat { get; }
+    IUser From { get; }
 }

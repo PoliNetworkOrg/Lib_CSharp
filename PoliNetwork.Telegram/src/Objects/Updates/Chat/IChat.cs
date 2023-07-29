@@ -8,8 +8,8 @@ namespace PoliNetwork.Telegram.Objects.Updates.Chat;
 
 public interface IChat
 {
-    long? Id { get; set; }
-    string? Username { get; set; }
-    public ChatType? Type { get; set; }
+    long? Id { get; }
+    string? Username { get; }
+    public ChatType? Type { get; }
     public bool ValidUsername();
 }

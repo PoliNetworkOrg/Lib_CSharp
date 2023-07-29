@@ -9,14 +9,14 @@ namespace PoliNetwork.Telegram.Objects.Updates.Message;
 
 public class MessageFromBot : IMessage
 {
+    private readonly global::Telegram.Bot.Types.Message? _message;
+
     public MessageFromBot(global::Telegram.Bot.Types.Message? updateMessage)
     {
-        Text = updateMessage?.Text;
-        From = new UserFromBot(updateMessage?.From);
-        Chat = new ChatFromBot(updateMessage?.Chat);
+        _message = updateMessage;
     }
 
-    public string? Text { get; set; }
-    public IChat Chat { get; set; }
-    public IUser From { get; set; }
+    public string? Text => _message?.Text;
+    public IChat Chat => new ChatFromBot(_message?.Chat);
+    public IUser From => new UserFromBot(_message?.From);
 }

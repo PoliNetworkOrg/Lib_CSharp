@@ -1,5 +1,9 @@
+#region
+
 using BingChat;
 using PoliNetwork.Ai.Objects.Chat;
+
+#endregion
 
 namespace PoliNetwork.Ai.Objects.Ai;
 

@@ -8,22 +8,23 @@ namespace PoliNetwork.Telegram.Objects.Updates.Chat;
 
 public class ChatFromBot : IChat
 {
+    private readonly global::Telegram.Bot.Types.Chat? _chat;
+
     public ChatFromBot(global::Telegram.Bot.Types.Chat? updateMessageChat)
     {
-        Id = updateMessageChat?.Id;
-        Username = updateMessageChat?.Username;
-        Type = GetChatType(updateMessageChat?.Type);
+        _chat = updateMessageChat;
     }
 
+    public long? Id => _chat?.Id;
+    public string? Username => _chat?.Username;
 
-    public long? Id { get; set; }
-    public string? Username { get; set; }
-    public ChatType? Type { get; set; }
+    public ChatType? Type => GetChatType(_chat?.Type);
 
 
     public bool ValidUsername()
     {
-        return !string.IsNullOrEmpty(Username) && Username.Length > 4;
+        const int minLengthUsername = 4;
+        return !string.IsNullOrEmpty(Username) && Username.Length > minLengthUsername;
     }
 
     private static ChatType? GetChatType(global::Telegram.Bot.Types.Enums.ChatType? type)
