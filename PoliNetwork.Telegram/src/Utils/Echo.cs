@@ -23,7 +23,8 @@ public static class Echo
         if (string.IsNullOrEmpty(messageText))
             return;
 
-        var chatId = message.Chat.Id;
+        var messageChat = message.Chat;
+        var chatId = messageChat.Id;
 
         // Echo received message text
         if (chatId == null) return;
