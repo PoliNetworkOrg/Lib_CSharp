@@ -64,3 +64,5 @@ PoliNetwork.Db/Test/obj/
 PoliNetwork.Telegram/Test/bin/
 
 PoliNetwork.Telegram/Test/obj/
+
+*.user
