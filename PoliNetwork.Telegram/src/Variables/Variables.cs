@@ -2,5 +2,5 @@
 
 public class Variables
 {
-    public static readonly string DefaultConfigPath = "../tg_config.json";
+    public static readonly string DefaultTelegramConfigurationPath = "../tg_config.json";
 }
