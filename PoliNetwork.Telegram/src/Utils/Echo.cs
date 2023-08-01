@@ -26,6 +26,8 @@ public static class Echo
         var messageChat = message.Chat;
         var chatId = messageChat.Id;
 
+
+
         // Echo received message text
         if (chatId == null) return;
 
