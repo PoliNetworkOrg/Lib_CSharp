@@ -1,3 +1,5 @@
+using Telegram.Bot;
+
 namespace PoliNetwork.Telegram.Options;
 
 public abstract class AbstractTelegramBotOptions : TelegramBotClientOptions
