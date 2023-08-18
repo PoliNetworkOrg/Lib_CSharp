@@ -1,12 +1,12 @@
-using PoliNetwork.Telegram.Logger;
 using PoliNetwork.Telegram.Bot.Functionality;
+using PoliNetwork.Telegram.Logger;
 using PoliNetwork.Telegram.Options;
 using PoliNetwork.Telegram.Properties;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 
-namespace PoliNetwork.Telegram.Bot
+namespace PoliNetwork.Telegram.Bot.Bots
 {
     public class ModerationBot : AbstractTelegramBot, IEcho
     {
@@ -17,8 +17,6 @@ namespace PoliNetwork.Telegram.Bot
         {
             if (message.Text is not { } messageText) return;
             long? chatId = message.Chat.Id;
-
-            if (chatId == null) return;
 
             var sentMessage = this.SendTextMessageAsync(chatId, $"You just typed: {messageText}", cancellationToken: cancellationToken).Result;
             Logger?.Info($"Message: '{messageText}'\nChat: {chatId}\nId: {sentMessage?.MessageId}");

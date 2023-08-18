@@ -5,7 +5,7 @@ using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
-namespace PoliNetwork.Telegram.Bot
+namespace PoliNetwork.Telegram.Bot.Bots
 {
     public abstract class AbstractTelegramBot : TelegramBotClient
     {
