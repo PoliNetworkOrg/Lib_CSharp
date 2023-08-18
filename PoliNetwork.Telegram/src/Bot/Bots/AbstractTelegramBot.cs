@@ -13,8 +13,8 @@ namespace PoliNetwork.Telegram.Bot.Bots
         public AbstractLogger? Logger { get; set; }
         public AbstractTelegramBotOptions? Options { get; set; }
 
-        protected AbstractTelegramBot(AbstractTelegramBotOptions options, HttpClient? httpClient = null, AbstractLogger? logger = null, User? user = null)
-        : base(options, httpClient)
+        protected AbstractTelegramBot(AbstractTelegramBotOptions? options, HttpClient? httpClient = null, AbstractLogger? logger = null, User? user = null)
+        : base(options ?? new TelegramBotOptions(""), httpClient)
         {
             Logger = logger;
             User = user ?? this.GetMeAsync().Result;
