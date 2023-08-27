@@ -13,7 +13,7 @@ public class LogConfig
 
         Level = logLevel;
         _isWriteToFileEnabled = isWriteToFileEnabled;
-        LogFilePath = Path.Join(logFilePath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"), ".log");
+        LogFilePath = Path.Join(logFilePath, DateTime.UtcNow.ToString("yyyyMMdd_HHmmss") + ".log");
     }
 
     public bool CanWriteToFile()
