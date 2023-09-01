@@ -1,10 +1,8 @@
-using Newtonsoft.Json;
-using PoliNetwork.Telegram.Logger;
-using PoliNetwork.Telegram.Configuration;
+using PoliNetwork.Telegram.ConfigurationLoader;
 
-namespace PoliNetwork.Telegram.ConfigurationLoader;
+namespace PoliNetwork.Telegram.Utility.ConfigurationLoader;
 
 public class TelegramConfigurationUtility
 {
-    public static readonly FileConfigurationLoader configurationLoader = new JSONFileConfigurationLoader();
+    public static readonly FileConfigurationLoader ConfigurationLoader = new JSONFileConfigurationLoader();
 }

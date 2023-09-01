@@ -6,5 +6,5 @@ public class BotUpdate : global::Telegram.Bot.Types.Update, IUpdate
         Message = update.Message;
     }
 
-    IMessage IUpdate.Message => new BotMessage(Message);
+    IMessage? IUpdate.Message => Message != null ? new BotMessage(Message) : null;
 }

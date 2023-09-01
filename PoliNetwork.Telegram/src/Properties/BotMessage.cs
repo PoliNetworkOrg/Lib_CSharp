@@ -1,4 +1,4 @@
-using PoliNetwork.Telegram.Properties;
+namespace PoliNetwork.Telegram.Properties;
 
 public class BotMessage : global::Telegram.Bot.Types.Message, IMessage
 {
@@ -9,5 +9,12 @@ public class BotMessage : global::Telegram.Bot.Types.Message, IMessage
     }
 
     public new IChat Chat => new BotChat(base.Chat);
-    public new IUser From => new BotUser(base.From);
+    public new IUser? From
+    {
+        get
+        {
+            var from = base.From;
+            return from != null ? new BotUser(from) : null;
+        }
+    }
 }
