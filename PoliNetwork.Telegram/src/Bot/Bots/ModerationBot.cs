@@ -13,14 +13,7 @@ namespace PoliNetwork.Telegram.Bot.Bots
         public ModerationBot(AbstractTelegramBotOptions options, HttpClient? httpClient = null, AbstractLogger? logger = null, User? user = null)
         : base(options, httpClient, logger, user) { }
 
-        public void Echo(IMessage message, CancellationToken cancellationToken)
-        {
-            if (message.Text is not { } messageText) return;
-            long? chatId = message.Chat.Id;
 
-            var sentMessage = this.SendTextMessageAsync(chatId, $"You just typed: {messageText}", cancellationToken: cancellationToken).Result;
-            Logger?.Info($"Message: '{messageText}'\nChat: {chatId}\nId: {sentMessage?.MessageId}");
-        }
 
         protected override Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
@@ -40,5 +33,15 @@ namespace PoliNetwork.Telegram.Bot.Bots
             Options?.UpdateMethod?.Run(update, cancellationToken);
             return Task.CompletedTask;
         }
+
+        public void Echo(IMessage message, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public interface IMessage
+    {
+        object Chat { get; set; }
     }
 }

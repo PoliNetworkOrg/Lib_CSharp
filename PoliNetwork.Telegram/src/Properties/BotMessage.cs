@@ -1,10 +1,12 @@
-<<<<<<< HEAD
-namespace PoliNetwork.Telegram.Properties;
-=======
-using PoliNetwork.Telegram.Properties;
->>>>>>> v3
+using PoliNetwork.Telegram.Bot.Bots;
 
-public class BotMessage : global::Telegram.Bot.Types.Message, IMessage
+
+namespace PoliNetwork.Telegram.Properties;
+
+using PoliNetwork.Telegram.Properties;
+
+
+public class BotMessage : global::Telegram.Bot.Types.Message
 {
     public BotMessage(global::Telegram.Bot.Types.Message message)
     {
@@ -12,8 +14,8 @@ public class BotMessage : global::Telegram.Bot.Types.Message, IMessage
         base.From = message.From;
     }
 
-    public new IChat Chat => new BotChat(base.Chat);
-<<<<<<< HEAD
+
+
     public new IUser? From
     {
         get
@@ -22,7 +24,7 @@ public class BotMessage : global::Telegram.Bot.Types.Message, IMessage
             return from != null ? new BotUser(from) : null;
         }
     }
-=======
-    public new IUser From => new BotUser(base.From);
->>>>>>> v3
+
+
+
 }

@@ -1,3 +1,6 @@
+using PoliNetwork.Telegram.Bot.Bots;
+using PoliNetwork.Telegram.Options;
+
 namespace PoliNetwork.Telegram.Properties;
 public class BotUpdate : global::Telegram.Bot.Types.Update, IUpdate
 {
@@ -6,9 +9,7 @@ public class BotUpdate : global::Telegram.Bot.Types.Update, IUpdate
         Message = update.Message;
     }
 
-<<<<<<< HEAD
-    IMessage? IUpdate.Message => Message != null ? new BotMessage(Message) : null;
-=======
-    IMessage IUpdate.Message => new BotMessage(Message);
->>>>>>> v3
+    BotMessage IUpdate.Message => Message != null ? new BotMessage(Message) : null;
+
+
 }

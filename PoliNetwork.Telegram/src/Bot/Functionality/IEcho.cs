@@ -1,3 +1,4 @@
+using PoliNetwork.Telegram.Bot.Bots;
 using PoliNetwork.Telegram.Properties;
 
 namespace PoliNetwork.Telegram.Bot.Functionality

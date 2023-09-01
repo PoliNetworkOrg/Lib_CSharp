@@ -1,7 +1,6 @@
 using PoliNetwork.Telegram.Bot.Functionality;
 using PoliNetwork.Telegram.Logger;
 using PoliNetwork.Telegram.Options;
-using PoliNetwork.Telegram.Properties;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
@@ -28,8 +27,10 @@ public class TestBot : AbstractTelegramBot, IEcho
         return Task.CompletedTask;
     }
 
-    public void Echo(IMessage message, CancellationToken cancellationToken)
+    public  void Echo(IMessage message, CancellationToken cancellationToken)
     {
         return;
     }
+
+
 }

@@ -6,11 +6,16 @@ using Telegram.Bot.Types;
 
 namespace PoliNetwork.Telegram.Options;
 
-public class UpdateMethod
+public abstract class UpdateMethod
 {
-    private readonly Action<CancellationToken, IUpdate> _action;
+    private readonly Action<CancellationToken, BotUpdate> _action;
 
-    public UpdateMethod(Action<CancellationToken, IUpdate> action) => _action = action;
+    protected UpdateMethod(Action<CancellationToken, IUpdate> action) => _action = (Action<CancellationToken, BotUpdate>?)action;
 
     public void Run(Update update, CancellationToken cancellationToken) => _action.Invoke(cancellationToken, new BotUpdate(update));
+}
+
+public interface IUpdate
+{
+    BotMessage Message { get; }
 }
