@@ -1,4 +1,4 @@
-namespace PoliNetwork.Telegram.Objects.Updates.Type;
+namespace PoliNetwork.Telegram.Properties;
 
 public enum ChatType
 {
