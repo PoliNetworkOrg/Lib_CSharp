@@ -48,4 +48,9 @@
     <ItemGroup>
         <ProjectReference Include="..\..\PoliNetwork.Core\src\PoliNetwork.Core.csproj"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Configuration\" />
+      <Folder Include="Utility\ConfigurationLoader\" />
+    </ItemGroup>
 </Project>

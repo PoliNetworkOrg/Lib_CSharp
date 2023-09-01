@@ -25,7 +25,7 @@ public class BotChat : global::Telegram.Bot.Types.Chat, IChat
     /* This method shoud be delegated to some other class, has nothing to do with the Chat itself */
     public bool ValidUsername()
     {
-        const int MIN_LENGTH_USERNAME = 4;
-        return !string.IsNullOrEmpty(Username) && Username.Length > MIN_LENGTH_USERNAME;
+        const int minLengthUsername = 4;
+        return !string.IsNullOrEmpty(Username) && Username.Length > minLengthUsername;
     }
 }
