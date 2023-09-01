@@ -79,7 +79,7 @@ public class Logger
     }
 
 
-    public void SetLogConfing(LogConfig logConfig)
+    public void SetLogConfig(LogConfig logConfig)
     {
         _logConfig = logConfig;
     }
