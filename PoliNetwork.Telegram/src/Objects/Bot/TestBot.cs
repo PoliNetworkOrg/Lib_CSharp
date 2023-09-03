@@ -2,6 +2,7 @@
 
 using PoliNetwork.Core.Utils.LoggerNS;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.ReplyMarkups;
 
 #endregion
 
@@ -25,6 +26,13 @@ public class TestBot : ITelegramBotWrapper
     public void Start(CancellationToken cancellationToken)
     {
     }
+
+    public Message SendTextMessage(long chatId, string text, CancellationToken cancellationToken,
+        IReplyMarkup? iReplyMarkup = null, int? replyToMessageId = null)
+    {
+        return new Message();
+    }
+
 
     /// <summary>
     ///     Send text message (dummy)
@@ -54,6 +62,10 @@ public class TestBot : ITelegramBotWrapper
     }
 
     public void BanUser(long chatId, long userId, DateTime? untilDate)
+    {
+    }
+
+    public void SendLocation(Update update, Location location)
     {
     }
 }

@@ -7,6 +7,7 @@ using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 
 #endregion
 
@@ -49,7 +50,7 @@ public class TelegramBot : ITelegramBotWrapper
         {
             AllowedUpdates = Array.Empty<UpdateType>() // receive all update types except ChatMember related updates
         };
-
+        
         _telegramBotClient.StartReceiving(
             HandleUpdateAsync,
             HandlePollingErrorAsync,
@@ -66,10 +67,19 @@ public class TelegramBot : ITelegramBotWrapper
     /// <param name="chatId">chatId to send to</param>
     /// <param name="text">text</param>
     /// <param name="cancellationToken">cancellationToken</param>
+    /// <param name="iReplyMarkup"></param>
+    /// <param name="mMessageId"></param>
+    /// <param name="replyToMessageId"></param>
     /// <returns></returns>
-    public Message SendTextMessage(long chatId, string text, CancellationToken cancellationToken)
+    public Message SendTextMessage(long chatId, string text, CancellationToken cancellationToken,
+        IReplyMarkup? iReplyMarkup = null, int? replyToMessageId = null)
     {
-        return _telegramBotClient.SendTextMessageAsync(chatId, text, cancellationToken: cancellationToken).Result;
+        return _telegramBotClient.SendTextMessageAsync(
+            chatId,
+            text, 
+            cancellationToken: cancellationToken,
+            replyMarkup:iReplyMarkup,
+            replyToMessageId:replyToMessageId).Result;
     }
 
     /// <summary>
@@ -96,7 +106,7 @@ public class TelegramBot : ITelegramBotWrapper
     private Task HandleUpdateAsync(ITelegramBotClient aTelegramBotClient, Update bUpdate,
         CancellationToken cancellationToken)
     {
-        _config.UpdateMethod?.Run(bUpdate, cancellationToken);
+        _config.UpdateMethod?.Run(bUpdate, cancellationToken, this);
         return Task.CompletedTask;
     }
 
@@ -138,5 +148,43 @@ public class TelegramBot : ITelegramBotWrapper
     public long? GetId()
     {
         return _user.Id;
+    }
+
+    public void RemoveKeyboard(Update update)
+    {
+        var updateMessage = update.CallbackQuery?.Message ?? update.Message;
+        if (updateMessage == null) return;
+        var updateMessageChat = updateMessage.Chat;
+        InlineKeyboardMarkup? replyMarkup = null;
+        var m = this._telegramBotClient.EditMessageReplyMarkupAsync(updateMessageChat.Id, updateMessage.MessageId,
+            replyMarkup).Result;
+        Console.WriteLine("Removed keyboard from "+ m.MessageId);
+    }
+
+    public void EditTextAppend(Update update, string s)
+    {
+        var updateMessage = update.CallbackQuery?.Message ?? update.Message;
+        if (updateMessage == null) return;
+        var updateMessageChat = updateMessage.Chat;
+        var updateMessageText = updateMessage.Text + "\n\n" + s;
+        var m = this._telegramBotClient.EditMessageTextAsync(updateMessageChat.Id, updateMessage.MessageId, updateMessageText).Result;
+        Console.WriteLine("Append text (edit) to "+ m.MessageId);
+    }
+    
+    public void EditText(Update update, string s)
+    {
+        var updateMessage = update.CallbackQuery?.Message ?? update.Message;
+        if (updateMessage == null) return;
+        var updateMessageChat = updateMessage.Chat;
+        var m = this._telegramBotClient.EditMessageTextAsync(updateMessageChat.Id, updateMessage.MessageId, s).Result;
+        Console.WriteLine("Edit text to "+ m.MessageId);
+    }
+
+    public void SendLocation(Update update, Location location)
+    {
+        var updateMessage = update.CallbackQuery?.Message ?? update.Message;
+        if (updateMessage == null) return;
+        var m = this._telegramBotClient.SendLocationAsync(updateMessage.Chat.Id, location.Longitude, location.Latitude).Result;
+        Console.WriteLine("Sent location to " + m.MessageId);
     }
 }

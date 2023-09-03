@@ -1,6 +1,7 @@
 #region
 
 using PoliNetwork.Telegram.Objects.Updates.Message;
+using Telegram.Bot.Types.Enums;
 
 #endregion
 
