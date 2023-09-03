@@ -21,7 +21,17 @@ public static class Database
     /// <param name="dbConfig">DBMS Config</param>
     /// <param name="args">Query Args</param>
     /// <returns></returns>
-    public static int Execute(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
+    public static int? Execute(string query, DbConfig? dbConfig, Dictionary<string, object?>? args = null)
+    {
+        return dbConfig?.DbType switch
+        {
+            DbType.MYSQL => ExecuteMySql(query, dbConfig, args),
+            DbType.SQLITE => ExecuteSqlLite(query, dbConfig, args),
+            _ => null
+        };
+    }
+
+    private static int ExecuteMySql(string query, DbConfig dbConfig, Dictionary<string, object?>? args)
     {
         var connection = new MySqlConnection(DbConfigUtils.GetConnectionString(dbConfig));
 
@@ -36,7 +46,7 @@ public static class Database
                 query = query.Replace(key, value?.ToString() ?? "NULL");
             }
 
-        dbConfig?.Logger.DbQuery(query);
+        dbConfig.Logger.DbQuery(query);
 
         OpenConnection(connection);
 
@@ -45,6 +55,41 @@ public static class Database
 
         connection.Close();
         return numberOfRowsAffected ?? -1;
+    }
+
+    private static int? ExecuteSqlLite(string query, DbConfig dbConfig, Dictionary<string, object?>? args)
+    {
+        var conn = GetConnString(dbConfig);
+        if (string.IsNullOrEmpty(conn))
+            return null;
+
+        return ExecuteNonQuerySqlLite(conn, query);
+    }
+
+
+    private static int ExecuteNonQuerySqlLite(string connectionString, string query)
+    {
+
+        var rowsAffected = 0;
+
+        try
+        {
+            using SQLiteConnection connection = new SQLiteConnection(connectionString);
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+            {
+                rowsAffected = command.ExecuteNonQuery();
+            }
+
+            connection.Close();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+
+        return rowsAffected;
     }
 
     /// <summary>
@@ -66,11 +111,17 @@ public static class Database
 
     private static DataTable? ExecuteSelectSqlite(string query, DbConfig dbConfig, Dictionary<string, object?>? args)
     {
+        var connectionString = GetConnString(dbConfig);
+        return string.IsNullOrEmpty(connectionString) ? null : ExecuteQueryAndGetDataTable(connectionString, query);
+    }
+
+    private static string? GetConnString(DbConfig dbConfig)
+    {
         if (dbConfig.Path == null) return null;
         var path = FindFile(dbConfig.Path, ".");
         if (string.IsNullOrEmpty(path)) return null;
-        var connectionString = "Data Source=" + path+ ";Version=3;";
-        return ExecuteQueryAndGetDataTable(connectionString, query);
+        var connectionString = "Data Source=" + path + ";Version=3;";
+        return connectionString;
     }
 
 
@@ -114,7 +165,7 @@ public static class Database
     }
 
 
-    private static DataTable ExecuteQueryAndGetDataTable(string connectionString, string query)
+    private static DataTable ExecuteQueryAndGetDataTable(string? connectionString, string query)
     {
         DataTable dataTable = new DataTable();
 
