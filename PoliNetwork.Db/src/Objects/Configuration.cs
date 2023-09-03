@@ -19,6 +19,8 @@ public class DbConfig
     public string? Password;
     public int Port;
     public string? User;
+    public DbType? DbType;
+    public string? Path; //db file path, useful for sqlite databases
 
     public DbConfig(Logger? logger)
     {
