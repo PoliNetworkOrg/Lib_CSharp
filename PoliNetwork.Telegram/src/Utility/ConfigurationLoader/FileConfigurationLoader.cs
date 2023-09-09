@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
-using PoliNetwork.Telegram.Logger;
 using PoliNetwork.Telegram.Options;
+using PoliNetwork.Telegram.Utility.Logger;
 
 namespace PoliNetwork.Telegram.ConfigurationLoader;
 

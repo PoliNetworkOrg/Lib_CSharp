@@ -1,5 +1,5 @@
-using PoliNetwork.Telegram.Logger;
 using PoliNetwork.Telegram.Options;
+using PoliNetwork.Telegram.Utility.Logger;
 using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;

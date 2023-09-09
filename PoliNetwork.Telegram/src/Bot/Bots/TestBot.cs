@@ -1,7 +1,7 @@
 using PoliNetwork.Telegram.Bot.Functionality;
-using PoliNetwork.Telegram.Logger;
 using PoliNetwork.Telegram.Options;
 using PoliNetwork.Telegram.Properties;
+using PoliNetwork.Telegram.Utility.Logger;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 

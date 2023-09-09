@@ -1,4 +1,4 @@
-namespace PoliNetwork.Telegram.Logger;
+namespace PoliNetwork.Telegram.Utility.Logger;
 
 public abstract class AbstractLogger
 {
@@ -73,6 +73,15 @@ public abstract class AbstractLogger
     public void Error(object message)
     {
         Write(LogLevel.ERROR, message);
+    }
+    
+    //function to handle multiple objects by splitting them into multiple Write calls
+    public void Error(params object[] messages)
+    {
+        foreach (var message in messages)
+        {
+            Write(LogLevel.ERROR, message);
+        }
     }
 
     public void Warning(object message)

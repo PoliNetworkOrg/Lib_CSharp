@@ -1,4 +1,4 @@
-namespace PoliNetwork.Telegram.Logger;
+namespace PoliNetwork.Telegram.Utility.Logger;
 
 public class DefaultLogger : AbstractLogger
 {
