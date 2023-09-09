@@ -17,8 +17,16 @@ namespace PoliNetwork.Telegram.Bot.Bots
         : base(options ?? new TelegramBotOptions(""), httpClient)
         {
             Logger = logger;
-            User = user ?? this.GetMeAsync().Result;
-            Logger?.Info($"CONSTRUCTED BOT: {User.Id} ({User.Username})");
+            try
+            {
+                User = user ?? this.GetMeAsync().Result;
+            }
+            catch
+            {
+                ;
+            }
+
+            Logger?.Info(User != null ? $"CONSTRUCTED BOT: {User.Id} ({User.Username})" : "BOT EMPTY!");
         }
 
         public void Start(CancellationToken cancellationToken)
