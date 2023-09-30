@@ -1,12 +1,11 @@
 #region
 
 using HtmlAgilityPack;
-using PoliFemoBackend.Source.Enums;
-using PoliFemoBackend.Source.Utils.Html;
+using PoliNetwork.Html.Utils;
 
 #endregion
 
-namespace PoliFemoBackend.Source.Utils.Rooms;
+namespace PoliNetwork.Rooms.Utils;
 
 public static class RoomUtil
 {

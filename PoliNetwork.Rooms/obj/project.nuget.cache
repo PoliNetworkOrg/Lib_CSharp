@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "plcUbwqdx3gH+pdRugtydqvR5P8l3FegPH+Unqw3NeCHi2birD7LunD4PmLUD5Cnk7DdbrzAzKMkkTSMYo3XBA==",
+  "dgSpecHash": "UQkbcxwp2PbBdb42AvZXB06WqebyPjJGwpX7QgtrBiIl4Tc1NIyIxymx+tPd/8oTNO2QaJo01RjAi8VtwgXF2A==",
   "success": true,
   "projectFilePath": "C:\\git\\PoliNetwork\\APP\\PoliFemoBackend\\Lib_CSharp\\PoliNetwork.Rooms\\PoliNetwork.Rooms.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\htmlagilitypack\\1.11.53\\htmlagilitypack.1.11.53.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\htmlagilitypack\\1.11.53\\htmlagilitypack.1.11.53.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }
