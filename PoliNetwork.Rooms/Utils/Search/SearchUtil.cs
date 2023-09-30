@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using PoliNetwork.Core.Enums;
 
 namespace PoliNetwork.Rooms.Utils.Search;
 

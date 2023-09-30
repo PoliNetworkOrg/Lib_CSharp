@@ -4,7 +4,7 @@ using HtmlAgilityPack;
 
 #endregion
 
-namespace PoliFemoBackend.Source.Utils.Html;
+namespace PoliNetwork.Html.Utils;
 
 public static class NodeUtil
 {

@@ -1,5 +1,6 @@
 ﻿namespace PoliNetwork.Core.Objects.Threading;
 
+[Serializable]
 public class ThreadWithAction
 {
     public readonly List<int> Partial = new();

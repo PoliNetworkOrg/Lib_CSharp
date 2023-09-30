@@ -1,7 +1,8 @@
 ﻿namespace PoliNetwork.Core.Enums;
 
+[Serializable]
 public enum CacheTypeEnum
 {
-    NONE,
-    ROOMTABLE
+    NONE = 0,
+    ROOMTABLE = 1
 }
