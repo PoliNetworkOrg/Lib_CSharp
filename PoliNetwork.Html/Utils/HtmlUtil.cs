@@ -16,13 +16,15 @@ public static class HtmlUtil
     public static Task<WebReply> DownloadHtmlAsync(
         string urlAddress,
         bool useCache = true,
+        Func<string,WebReply?>? cacheCheckIfToUse = null,
+        Action<string,string>? cacheSaveToCache = null,
         CacheTypeEnum cacheTypeEnum = CacheTypeEnum.NONE)
     {
         try
         {
-            if (useCache)
+            if (useCache && cacheCheckIfToUse != null)
             {
-                var resultFromCache = CacheUtil.CheckIfToUseCache(urlAddress);
+                var resultFromCache =  cacheCheckIfToUse.Invoke(urlAddress); // CacheUtil.CheckIfTouse(urlAddress)
                 if (resultFromCache != null)
                     return Task.FromResult(resultFromCache);
             }
@@ -43,8 +45,9 @@ public static class HtmlUtil
                     break;
             }
 
-            if (useCache)
-                CacheUtil.SaveToCache(urlAddress, s);
+            if (useCache && cacheSaveToCache != null)
+                cacheSaveToCache.Invoke(urlAddress, s); //  CacheUtil.SaveToCache(urlAddress, s);
+              
 
             return Task.FromResult(new WebReply(s, HttpStatusCode.OK));
         }

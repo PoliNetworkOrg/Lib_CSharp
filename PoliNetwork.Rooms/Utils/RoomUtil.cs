@@ -2,6 +2,7 @@
 
 using HtmlAgilityPack;
 using PoliNetwork.Core.Enums;
+using PoliNetwork.Html.Objects.Web;
 using PoliNetwork.Html.Utils;
 
 #endregion
@@ -13,7 +14,8 @@ public static class RoomUtil
     public const string RoomInfoUrls = "https://www7.ceda.polimi.it/spazi/spazi/controller/";
 
 
-    internal static async Task<Tuple<List<HtmlNode>?, string>> GetDailySituationOnDate(DateTime? date, string sede)
+    public static async Task<Tuple<List<HtmlNode>?, string>> GetDailySituationOnDate(DateTime? date, string sede,
+        Action<string, string>? cacheSaveToCache, Func<string, WebReply?>? cacheCheckIfToUse)
     {
         date ??= DateTime.Today;
         var day = date?.Day;
@@ -31,7 +33,8 @@ public static class RoomUtil
                   "&giorno_year=" + year +
                   "&jaf_giorno_date_format=dd%2FMM%2Fyyyy&evn_visualizza=";
 
-        var html = await HtmlUtil.DownloadHtmlAsync(url, false, CacheTypeEnum.ROOMTABLE);
+        var html = await HtmlUtil.DownloadHtmlAsync(url, false, cacheTypeEnum:CacheTypeEnum.ROOMTABLE, cacheSaveToCache: cacheSaveToCache, 
+            cacheCheckIfToUse:cacheCheckIfToUse );
         if (html.IsValid() == false) return new Tuple<List<HtmlNode>?, string>(null, "html invalid");
 
         var doc = new HtmlDocument();

@@ -2,6 +2,9 @@
 
 using System.Web;
 using HtmlAgilityPack;
+using PoliNetwork.Core.Data;
+using PoliNetwork.Rooms.Enums;
+using PoliNetwork.Rooms.Objects;
 
 #endregion
 
@@ -9,7 +12,7 @@ namespace PoliNetwork.Rooms.Utils;
 
 public static class FreeRoomsUtil
 {
-    internal static List<object?>? GetFreeRooms(HtmlNode? table, DateTime? start, DateTime? stop)
+    public static List<object?>? GetFreeRooms(HtmlNode? table, DateTime? start, DateTime? stop)
     {
         if (table?.ChildNodes == null) return null;
 
@@ -115,7 +118,7 @@ public static class FreeRoomsUtil
         foreach (var roomOccupancyResultObject in occupied)
         {
             // Skip conditions (same status, empty list, different course)
-            if (nodupes.Any() && nodupes.Last().RoomOccupancyEnum == roomOccupancyResultObject.RoomOccupancyEnum && nodupes.Last().text == roomOccupancyResultObject.text)
+            if (nodupes.Any() && nodupes.Last().RoomOccupancyEnum == roomOccupancyResultObject.RoomOccupancyEnum && nodupes.Last().Text == roomOccupancyResultObject.Text)
                 continue;
 
             nodupes.Add(roomOccupancyResultObject);

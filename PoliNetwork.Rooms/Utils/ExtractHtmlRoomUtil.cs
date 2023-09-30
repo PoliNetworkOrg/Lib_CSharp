@@ -1,6 +1,9 @@
 ﻿#region
 
 using HtmlAgilityPack;
+using Newtonsoft.Json.Linq;
+using PoliNetwork.Rooms.Enums;
+using PoliNetwork.Rooms.Objects;
 
 #endregion
 
@@ -50,7 +53,7 @@ public static class ExtractHtmlRoomUtil
                 ["status"] = roomOccupancyResultObject.RoomOccupancyEnum.ToString()
             };
             if (roomOccupancyResultObject.RoomOccupancyEnum == RoomOccupancyEnum.OCCUPIED)
-                jObject.Add("text", roomOccupancyResultObject.text);
+                jObject.Add("text", roomOccupancyResultObject.Text);
             var propertyName = roomOccupancyResultObject.TimeOnly.ToString();
             occupancies.Add(propertyName, jObject);
         }

@@ -3,6 +3,7 @@
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Newtonsoft.Json.Linq;
+using PoliNetwork.Html.Objects.Web;
 using PoliNetwork.Html.Utils;
 
 #endregion
@@ -11,12 +12,13 @@ namespace PoliNetwork.Rooms.Utils;
 
 public static class SingleRoomUtil
 {
-    public static async Task<JObject?> GetRoomById(int id)
+    public static async Task<JObject?> GetRoomById(int id, Action<string, string>? cacheSaveToCache = null,
+        Func<string, WebReply?>? cacheCheckIfToUse = null)
     {
         var url = RoomUtil.RoomInfoUrls + "Aula.do?" +
                   "idaula=" + id;
 
-        var html = await HtmlUtil.DownloadHtmlAsync(url);
+        var html = await HtmlUtil.DownloadHtmlAsync(url, useCache:true, cacheCheckIfToUse: cacheCheckIfToUse, cacheSaveToCache:cacheSaveToCache);
         if (html.IsValid() == false) return null;
         /*
         example of property tag
