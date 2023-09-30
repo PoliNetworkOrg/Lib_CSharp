@@ -28,9 +28,23 @@
           }
         }
       },
+      "PoliNetwork.Core/0.0.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PoliNetwork.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PoliNetwork.Core.dll": {}
+        }
+      },
       "PoliNetwork.Html/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.53",
+          "PoliNetwork.Core": "0.0.1"
+        },
         "compile": {
           "bin/placeholder/PoliNetwork.Html.dll": {}
         },
@@ -119,6 +133,11 @@
         "packageIcon.png"
       ]
     },
+    "PoliNetwork.Core/0.0.1": {
+      "type": "project",
+      "path": "../PoliNetwork.Core/src/PoliNetwork.Core.csproj",
+      "msbuildProject": "../PoliNetwork.Core/src/PoliNetwork.Core.csproj"
+    },
     "PoliNetwork.Html/1.0.0": {
       "type": "project",
       "path": "../PoliNetwork.Html/PoliNetwork.Html.csproj",
@@ -129,6 +148,7 @@
     "net7.0": [
       "HtmlAgilityPack >= 1.11.53",
       "Newtonsoft.Json >= 13.0.3",
+      "PoliNetwork.Core >= 0.0.1",
       "PoliNetwork.Html >= 1.0.0"
     ]
   },
@@ -165,6 +185,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\git\\PoliNetwork\\APP\\PoliFemoBackend\\Lib_CSharp\\PoliNetwork.Core\\src\\PoliNetwork.Core.csproj": {
+              "projectPath": "C:\\git\\PoliNetwork\\APP\\PoliFemoBackend\\Lib_CSharp\\PoliNetwork.Core\\src\\PoliNetwork.Core.csproj"
+            },
             "C:\\git\\PoliNetwork\\APP\\PoliFemoBackend\\Lib_CSharp\\PoliNetwork.Html\\PoliNetwork.Html.csproj": {
               "projectPath": "C:\\git\\PoliNetwork\\APP\\PoliFemoBackend\\Lib_CSharp\\PoliNetwork.Html\\PoliNetwork.Html.csproj"
             }

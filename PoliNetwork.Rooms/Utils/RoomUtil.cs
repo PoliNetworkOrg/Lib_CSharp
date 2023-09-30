@@ -1,6 +1,7 @@
 #region
 
 using HtmlAgilityPack;
+using PoliNetwork.Core.Enums;
 using PoliNetwork.Html.Utils;
 
 #endregion

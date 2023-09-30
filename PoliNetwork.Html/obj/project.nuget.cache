@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HWwknNVQVjkatkXDs+fFRJgOZ4dmYhBSyaI0APqp7g9O2tAjk/pCidXqFvxV7WZXYp2wzSv8o/+MbTHXWcxgBQ==",
+  "dgSpecHash": "hjDbwh59Jm8iPpBFzBSKxHozWEy28vQ6S0op0m8DtYKOb/JOyUu4djbUhmQTgQ1wbGO1FYAgKaQdZMOmXrYujw==",
   "success": true,
   "projectFilePath": "C:\\git\\PoliNetwork\\APP\\PoliFemoBackend\\Lib_CSharp\\PoliNetwork.Html\\PoliNetwork.Html.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\htmlagilitypack\\1.11.53\\htmlagilitypack.1.11.53.nupkg.sha512"
+  ],
   "logs": []
 }

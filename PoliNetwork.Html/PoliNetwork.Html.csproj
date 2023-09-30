@@ -7,4 +7,18 @@
   </PropertyGroup>
 
 
+  <ItemGroup>
+    <ProjectReference Include="..\PoliNetwork.Core\src\PoliNetwork.Core.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.53" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Objects\" />
+  </ItemGroup>
+
 </Project>

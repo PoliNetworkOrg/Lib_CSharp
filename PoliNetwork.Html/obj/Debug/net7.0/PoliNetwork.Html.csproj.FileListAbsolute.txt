@@ -1,0 +1,5 @@
+C:\git\PoliNetwork\APP\PoliFemoBackend\Lib_CSharp\PoliNetwork.Html\obj\Debug\net7.0\PoliNetwork.Html.csproj.AssemblyReference.cache
+C:\git\PoliNetwork\APP\PoliFemoBackend\Lib_CSharp\PoliNetwork.Html\obj\Debug\net7.0\PoliNetwork.Html.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\PoliNetwork\APP\PoliFemoBackend\Lib_CSharp\PoliNetwork.Html\obj\Debug\net7.0\PoliNetwork.Html.AssemblyInfoInputs.cache
+C:\git\PoliNetwork\APP\PoliFemoBackend\Lib_CSharp\PoliNetwork.Html\obj\Debug\net7.0\PoliNetwork.Html.AssemblyInfo.cs
+C:\git\PoliNetwork\APP\PoliFemoBackend\Lib_CSharp\PoliNetwork.Html\obj\Debug\net7.0\PoliNetwork.Html.csproj.CoreCompileInputs.cache

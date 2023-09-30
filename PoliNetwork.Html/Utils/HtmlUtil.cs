@@ -2,6 +2,10 @@
 
 using System.Net;
 using System.Text;
+using HtmlAgilityPack;
+using PoliFemoBackend.Source.Utils.Html;
+using PoliNetwork.Core.Enums;
+using PoliNetwork.Html.Objects.Web;
 
 #endregion
 
