@@ -1,20 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Ai", "PoliNetwork.Ai\src\PoliNetwork.Ai.csproj", "{8D1866D8-37FF-41D1-BB99-89506CE9DC71}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Ai", "PoliNetwork.Ai\src\PoliNetwork.Ai.csproj", "{8D1866D8-37FF-41D1-BB99-89506CE9DC71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Core", "PoliNetwork.Core\src\PoliNetwork.Core.csproj", "{AC1A4327-0F95-429E-9237-01EAD00FA852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Core", "PoliNetwork.Core\src\PoliNetwork.Core.csproj", "{AC1A4327-0F95-429E-9237-01EAD00FA852}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Db", "PoliNetwork.Db\src\PoliNetwork.Db.csproj", "{DF3AB6F9-CFB8-4858-9EEB-A93666789BD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Db", "PoliNetwork.Db\src\PoliNetwork.Db.csproj", "{DF3AB6F9-CFB8-4858-9EEB-A93666789BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Telegram", "PoliNetwork.Telegram\src\PoliNetwork.Telegram.csproj", "{A208DC2C-99D6-4DC4-A4D1-7B464BC7BBF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Telegram", "PoliNetwork.Telegram\src\PoliNetwork.Telegram.csproj", "{A208DC2C-99D6-4DC4-A4D1-7B464BC7BBF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Ai.Test", "PoliNetwork.Ai\Test\PoliNetwork.Ai.Test.csproj", "{28B86A41-3DB8-4CE2-A351-7FA61DD93BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Ai.Test", "PoliNetwork.Ai\Test\PoliNetwork.Ai.Test.csproj", "{28B86A41-3DB8-4CE2-A351-7FA61DD93BA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Core.Test", "PoliNetwork.Core\Test\PoliNetwork.Core.Test.csproj", "{0D91D9FE-6898-428E-90F3-193979044361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Core.Test", "PoliNetwork.Core\Test\PoliNetwork.Core.Test.csproj", "{0D91D9FE-6898-428E-90F3-193979044361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Db.Test", "PoliNetwork.Db\Test\PoliNetwork.Db.Test.csproj", "{A366252F-74E3-450A-8C93-70BB22653DBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Db.Test", "PoliNetwork.Db\Test\PoliNetwork.Db.Test.csproj", "{A366252F-74E3-450A-8C93-70BB22653DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Telegram.Test", "PoliNetwork.Telegram\Test\PoliNetwork.Telegram.Test.csproj", "{D02D5D22-0518-4A81-91F5-D54B61C8A1F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliNetwork.Telegram.Test", "PoliNetwork.Telegram\Test\PoliNetwork.Telegram.Test.csproj", "{D02D5D22-0518-4A81-91F5-D54B61C8A1F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliNetwork.Rooms", "PoliNetwork.Rooms\PoliNetwork.Rooms.csproj", "{AB3513B8-83AA-4EA4-B957-F13481900828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +59,12 @@ Global
 		{D02D5D22-0518-4A81-91F5-D54B61C8A1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D02D5D22-0518-4A81-91F5-D54B61C8A1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D02D5D22-0518-4A81-91F5-D54B61C8A1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3513B8-83AA-4EA4-B957-F13481900828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3513B8-83AA-4EA4-B957-F13481900828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3513B8-83AA-4EA4-B957-F13481900828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3513B8-83AA-4EA4-B957-F13481900828}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
