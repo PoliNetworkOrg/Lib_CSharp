@@ -20,5 +20,4 @@ public static class SearchUtil
 
         return formattedRoom;
     }
-
 }

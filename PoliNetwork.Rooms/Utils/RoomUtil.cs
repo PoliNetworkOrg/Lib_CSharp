@@ -33,8 +33,9 @@ public static class RoomUtil
                   "&giorno_year=" + year +
                   "&jaf_giorno_date_format=dd%2FMM%2Fyyyy&evn_visualizza=";
 
-        var html = await HtmlUtil.DownloadHtmlAsync(url, false, cacheTypeEnum:CacheTypeEnum.ROOMTABLE, cacheSaveToCache: cacheSaveToCache, 
-            cacheCheckIfToUse:cacheCheckIfToUse );
+        var html = await HtmlUtil.DownloadHtmlAsync(url, false, cacheTypeEnum: CacheTypeEnum.ROOMTABLE,
+            cacheSaveToCache: cacheSaveToCache,
+            cacheCheckIfToUse: cacheCheckIfToUse);
         if (html.IsValid() == false) return new Tuple<List<HtmlNode>?, string>(null, "html invalid");
 
         var doc = new HtmlDocument();

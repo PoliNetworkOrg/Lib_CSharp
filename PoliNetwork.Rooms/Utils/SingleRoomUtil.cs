@@ -18,14 +18,14 @@ public static class SingleRoomUtil
         var url = RoomUtil.RoomInfoUrls + "Aula.do?" +
                   "idaula=" + id;
 
-        var html = await HtmlUtil.DownloadHtmlAsync(url, useCache:true, cacheCheckIfToUse: cacheCheckIfToUse, cacheSaveToCache:cacheSaveToCache);
+        var html = await HtmlUtil.DownloadHtmlAsync(url, true, cacheCheckIfToUse, cacheSaveToCache);
         if (html.IsValid() == false) return null;
         /*
         example of property tag
         <td colspan="1" rowspan="1" style="width: 33%" class="ElementInfoCard1 jaf-card-element">
-			<i>Codice vano</i>
-			<br>&nbsp;LCF040800S042
-		</td>
+            <i>Codice vano</i>
+            <br>&nbsp;LCF040800S042
+        </td>
         (parsing doesn't work very well, regex++)
         */
         var fetchedHtml = html.GetData() ?? "";

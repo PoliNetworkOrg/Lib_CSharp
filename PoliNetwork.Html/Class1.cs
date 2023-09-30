@@ -1,7 +1,5 @@
-﻿namespace PoliNetwork.Html
-{
-    public class Class1
-    {
+﻿namespace PoliNetwork.Html;
 
-    }
+public class Class1
+{
 }

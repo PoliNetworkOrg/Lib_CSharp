@@ -15,15 +15,15 @@ public static class HtmlUtil
     public static Task<WebReply> DownloadHtmlAsync(
         string urlAddress,
         bool useCache = true,
-        Func<string,WebReply?>? cacheCheckIfToUse = null,
-        Action<string,string>? cacheSaveToCache = null,
+        Func<string, WebReply?>? cacheCheckIfToUse = null,
+        Action<string, string>? cacheSaveToCache = null,
         CacheTypeEnum cacheTypeEnum = CacheTypeEnum.NONE)
     {
         try
         {
             if (useCache && cacheCheckIfToUse != null)
             {
-                var resultFromCache =  cacheCheckIfToUse.Invoke(urlAddress); // CacheUtil.CheckIfTouse(urlAddress)
+                var resultFromCache = cacheCheckIfToUse.Invoke(urlAddress); // CacheUtil.CheckIfTouse(urlAddress)
                 if (resultFromCache != null)
                     return Task.FromResult(resultFromCache);
             }
@@ -40,13 +40,11 @@ public static class HtmlUtil
                 case CacheTypeEnum.ROOMTABLE:
                     s = FixFromTableRoomCache(s);
                     break;
-                default:
-                    break;
             }
 
             if (useCache && cacheSaveToCache != null)
                 cacheSaveToCache.Invoke(urlAddress, s); //  CacheUtil.SaveToCache(urlAddress, s);
-              
+
 
             return Task.FromResult(new WebReply(s, HttpStatusCode.OK));
         }
@@ -66,5 +64,4 @@ public static class HtmlUtil
         s = t3?[0].InnerHtml ?? "";
         return s;
     }
-
 }

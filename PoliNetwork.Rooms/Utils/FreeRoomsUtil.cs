@@ -118,11 +118,13 @@ public static class FreeRoomsUtil
         foreach (var roomOccupancyResultObject in occupied)
         {
             // Skip conditions (same status, empty list, different course)
-            if (nodupes.Any() && nodupes.Last().RoomOccupancyEnum == roomOccupancyResultObject.RoomOccupancyEnum && nodupes.Last().Text == roomOccupancyResultObject.Text)
+            if (nodupes.Any() && nodupes.Last().RoomOccupancyEnum == roomOccupancyResultObject.RoomOccupancyEnum &&
+                nodupes.Last().Text == roomOccupancyResultObject.Text)
                 continue;
 
             nodupes.Add(roomOccupancyResultObject);
         }
+
         return nodupes;
     }
 }

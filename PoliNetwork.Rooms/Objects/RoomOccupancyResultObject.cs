@@ -17,6 +17,6 @@ public class RoomOccupancyResultObject
     {
         TimeOnly = timeOnly;
         RoomOccupancyEnum = roomOccupancyEnum;
-        this.Text = text;
+        Text = text;
     }
 }

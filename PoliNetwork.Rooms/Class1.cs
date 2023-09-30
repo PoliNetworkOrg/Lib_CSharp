@@ -1,7 +1,5 @@
-﻿namespace PoliNetwork.Rooms
-{
-    public class Class1
-    {
+﻿namespace PoliNetwork.Rooms;
 
-    }
+public class Class1
+{
 }
