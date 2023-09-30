@@ -8,7 +8,7 @@ namespace PoliFemoBackend.Source.Utils.Html;
 
 public static class NodeUtil
 {
-    internal static List<HtmlNode>? GetElementsByTagAndClassName(HtmlNode? doc, string tag = "",
+    public static List<HtmlNode>? GetElementsByTagAndClassName(HtmlNode? doc, string tag = "",
         string? className = "", long? limit = null)
     {
         if (doc == null) return null;
