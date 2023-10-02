@@ -4,19 +4,24 @@ hide empty description
 
 [*] -down-> PoliNetwork.Graduatorie
 [*] -down-> PoliNetwork.Bot
-[*] -down-> PoliNetwork.PoliFemoBackend 
+[*] -down-> PoliNetwork.PoliFemo.Backend 
 
 
 PoliNetwork.Bot --> PoliNetwork.Lib.Db
 PoliNetwork.Bot --> PoliNetwork.Lib.Core
 PoliNetwork.Bot -> PoliNetwork.Lib.Telegram
 PoliNetwork.Graduatorie --> PoliNetwork.Lib.Core
-PoliNetwork.PoliFemoBackend --> PoliNetwork.Lib.Core
-PoliNetwork.PoliFemoBackend ---> PoliNetwork.Lib.Db
+
+PoliNetwork.PoliFemo.Backend --> PoliNetwork.Lib.Core
+PoliNetwork.PoliFemo.Backend ---> PoliNetwork.Lib.Db
+PoliNetwork.PoliFemo.Backend -> PoliNetwork.Lib.Rooms
 
 PoliNetwork.Lib.Ai -> PoliNetwork.Lib.Core
 PoliNetwork.Lib.Db -> PoliNetwork.Lib.Core
 PoliNetwork.Lib.Telegram -> PoliNetwork.Lib.Core
+PoliNetwork.Lib.Rooms -> PoliNetwork.Lib.Core
+PoliNetwork.Lib.Rooms -> PoliNetwork.Lib.Html
+PoliNetwork.Lib.Html -> PoliNetwork.Lib.Core
 
 PoliNetwork.Lib.Db --> Newtonsoft.Json
 PoliNetwork.Lib.Db --> MySql.Data
