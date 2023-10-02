@@ -74,3 +74,9 @@ PoliNetwork.Telegram/Test/bin/
 PoliNetwork.Telegram/Test/obj/
 
 *.user
+
+.vs/
+
+.vs/*
+
+
