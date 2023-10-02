@@ -57,6 +57,14 @@ PoliNetwork.Core/Test/bin/
 
 PoliNetwork.Core/Test/obj/
 
+PoliNetwork.Rooms/bin/
+
+PoliNetwork.Rooms/obj/
+
+PoliNetwork.Html/bin/
+
+PoliNetwork.Html/obj/
+
 PoliNetwork.Db/Test/bin/
 
 PoliNetwork.Db/Test/obj/
@@ -66,3 +74,9 @@ PoliNetwork.Telegram/Test/bin/
 PoliNetwork.Telegram/Test/obj/
 
 *.user
+
+.vs/
+
+.vs/*
+
+
