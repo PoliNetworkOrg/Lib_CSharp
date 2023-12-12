@@ -36,7 +36,7 @@ public class Logger
 
     private void Write(LogLevel level, object message)
     {
-        if (level < _logConfig.Level) return;
+        if (level > _logConfig.Level) return;
 
         var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
         var messageMetadata = $"{timestamp} [{level}] \t";
