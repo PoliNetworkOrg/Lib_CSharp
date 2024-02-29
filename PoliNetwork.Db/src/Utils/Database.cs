@@ -99,20 +99,4 @@ public static class Database
             return null;
         }
     }
-
-    // ReSharper disable once UnusedMember.Global
-    public static long? GetIntFromColumn(DataRow dr, string columnName)
-    {
-        var o = dr[columnName];
-        if (o is null or DBNull) return null;
-
-        try
-        {
-            return Convert.ToInt64(o);
-        }
-        catch
-        {
-            return null;
-        }
-    }
 }
