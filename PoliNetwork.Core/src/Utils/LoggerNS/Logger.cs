@@ -16,6 +16,8 @@ public class Logger
     private void WriteToFile(string message)
     {
         if (!_logConfig.CanWriteToFile()) return;
+        if (!Directory.Exists(Path.GetDirectoryName(_logConfig.LogFilePath)))
+            Directory.CreateDirectory(Path.GetDirectoryName(_logConfig.LogFilePath) ?? "logs");
         using var writer = new StreamWriter(_logConfig.LogFilePath, true);
         writer.WriteLine(message);
     }
